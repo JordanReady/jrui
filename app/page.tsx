@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-4xl font-bold mb-4">
-        Your Next.js Auth/Firebase Starter Kit
+        Your Next.js OAuth/Firebase Starter Kit
       </h1>
       <p className="text-lg mb-8">
         Welcome to your new Next.js app with NextAuth.js and Firebase set up out
@@ -12,7 +12,7 @@ export default function Home() {
         ready to go!
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Link href="/step/1">
           <div className="bg-gray-200 p-4 hover:border-black border-2 cursor-pointer">
             <h2 className="text-xl font-semibold mb-2">
@@ -25,12 +25,13 @@ export default function Home() {
             <ol className="list-decimal pl-4 mt-2">
               <li>
                 Create a Google Cloud account at{" "}
-                <a
+                <Link
                   className="underline"
                   href="https://console.cloud.google.com/"
+                  target="blank"
                 >
                   Google Cloud Console
-                </a>
+                </Link>
                 .
               </li>
               <li>Set up a new project for your Next.js app.</li>
@@ -40,12 +41,13 @@ export default function Home() {
             </ol>
             <p className="mt-2">
               For detailed instructions, refer to the{" "}
-              <a
+              <Link
                 className="underline"
                 href="https://cloud.google.com/gcp/getting-started"
+                target="blank"
               >
                 Google Cloud Getting Started Guide
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -63,12 +65,13 @@ export default function Home() {
             <ol className="list-decimal pl-4 mt-2">
               <li>
                 Create a Firebase account at{" "}
-                <a
+                <Link
                   className="underline"
                   href="https://console.firebase.google.com/"
+                  target="blank"
                 >
                   Firebase Console
-                </a>
+                </Link>
                 .
               </li>
               <li>
@@ -81,12 +84,13 @@ export default function Home() {
             </ol>
             <p className="mt-2">
               Refer to the{" "}
-              <a
+              <Link
                 className="underline"
                 href="https://firebase.google.com/docs/web/setup"
+                target="blank"
               >
                 Firebase Web Setup Guide
-              </a>{" "}
+              </Link>{" "}
               for detailed instructions.
             </p>
           </div>
@@ -118,12 +122,13 @@ export default function Home() {
             </ol>
             <p className="mt-2">
               View the{" "}
-              <a
+              <Link
                 className="underline"
                 href="https://nextjs.org/docs/basic-features/environment-variables"
+                target="blank"
               >
                 Next.js Environment Variables documentation
-              </a>{" "}
+              </Link>{" "}
               for details on setting up environment variables.
             </p>
           </div>
@@ -166,9 +171,13 @@ export default function Home() {
                 <li>
                   Make sure you have a Vercel account. If not, you can sign up
                   at{" "}
-                  <a className="underline" href="https://vercel.com/">
+                  <Link
+                    className="underline"
+                    href="https://vercel.com/"
+                    target="blank"
+                  >
                     Vercel
-                  </a>
+                  </Link>
                   .
                 </li>
               </ul>

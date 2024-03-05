@@ -43,12 +43,13 @@ const page = () => {
         <ol className="list-decimal pl-4 mt-2">
           <li>
             Visit{" "}
-            <a
+            <Link
               className="underline"
               href="https://console.firebase.google.com/"
+              target="blank"
             >
               Firebase Console
-            </a>
+            </Link>
             .
           </li>
           <li>Click on "Get Started" and follow the registration process.</li>
@@ -93,12 +94,13 @@ const page = () => {
       {/* Additional information or links */}
       <p className="mt-4">
         For more detailed instructions, refer to the{" "}
-        <a
+        <Link
           className="underline"
           href="https://firebase.google.com/docs/web/setup"
+          target="blank"
         >
           Firebase Web Setup Guide
-        </a>
+        </Link>
         .
       </p>
     </div>

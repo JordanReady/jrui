@@ -7,7 +7,7 @@ const Header = () => {
     <div className="bg-white p-4 flex justify-center md:justify-between items-center align-middle border-black border-b-2">
       <Link href={"/"}>
         <h1 className="text-black text-3xl hidden md:block">
-          Starter Auth/Firebase Kit
+          Next.js OAuth/Firebase Starter Kit
         </h1>
       </Link>
       <div className="flex space-x-4">

@@ -34,9 +34,9 @@ const page = () => {
         <p>
           Before you proceed, make sure you have a Vercel account. If not, you
           can sign up at{" "}
-          <a className="underline" href="https://vercel.com/">
+          <Link className="underline" href="https://vercel.com/" target="blank">
             Vercel
-          </a>
+          </Link>
           .
         </p>
       </div>

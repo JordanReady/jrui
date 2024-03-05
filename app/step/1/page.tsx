@@ -35,9 +35,13 @@ const page = () => {
         <ol className="list-decimal pl-4 mt-2">
           <li>
             Visit{" "}
-            <a className="underline" href="https://console.cloud.google.com/">
+            <Link
+              className="underline"
+              href="https://console.cloud.google.com/"
+              target="blank"
+            >
               Google Cloud Console
-            </a>
+            </Link>
             .
           </li>
           <li>
@@ -87,12 +91,12 @@ const page = () => {
       {/* Additional information or links */}
       <p className="mt-4">
         For more detailed instructions, refer to the{" "}
-        <a
+        <Link
           className="underline"
           href="https://cloud.google.com/gcp/getting-started"
         >
           Google Cloud Getting Started Guide
-        </a>
+        </Link>
         .
       </p>
     </div>

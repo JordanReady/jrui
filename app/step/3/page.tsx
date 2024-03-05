@@ -73,12 +73,12 @@ const page = () => {
       {/* Additional information or links */}
       <p className="mt-4">
         View the{" "}
-        <a
+        <Link
           className="underline"
           href="https://nextjs.org/docs/basic-features/environment-variables"
         >
           Next.js Environment Variables documentation
-        </a>{" "}
+        </Link>
         for details on setting up environment variables.
       </p>
     </div>
