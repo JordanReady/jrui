@@ -35,7 +35,7 @@ const UserButton = () => {
     <div className="relative">
       <button
         onClick={handleButtonClick}
-        className={`px-4 py-2 text-black bg-white border-black border-2 ${
+        className={`px-4 py-2 text-black bg-white border-blue-500 border-2 ${
           session ? "signed-in" : ""
         }`}
       >
@@ -51,7 +51,7 @@ const UserButton = () => {
       </button>
 
       {session && showDropdown && (
-        <div className="absolute top-10 mt-3 right-0 bg-white  border-black border-2">
+        <div className="absolute top-10 mt-3 right-0 bg-white  border-blue-500 border-2">
           <button onClick={handleLogout} className="block px-4 py-2">
             Logout
           </button>
