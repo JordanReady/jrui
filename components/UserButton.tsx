@@ -52,9 +52,6 @@ const UserButton = () => {
 
       {session && showDropdown && (
         <div className="absolute top-10 mt-3 right-0 bg-white  border-black border-2">
-          <Link className="block px-4 py-2" href="/protected">
-            Protected
-          </Link>
           <button onClick={handleLogout} className="block px-4 py-2">
             Logout
           </button>
