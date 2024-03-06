@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 interface RevealProps {
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
+  duration?: number;
   children: ReactNode;
   className?: string;
 }
@@ -13,6 +14,7 @@ interface RevealProps {
 const Reveal: FC<RevealProps> = ({
   direction = "up",
   delay = 0.2,
+  duration = 0.5,
   children,
   className,
 }) => {
@@ -27,7 +29,7 @@ const Reveal: FC<RevealProps> = ({
         opacity: 1,
         y: 0,
         x: 0,
-        transition: { duration: 0.5, delay },
+        transition: { duration: duration, delay },
       });
     }
   }, [controls, inView, delay]);

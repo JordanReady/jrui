@@ -27,46 +27,127 @@ const RevealComponent = () => {
               specified direction and delay.
             </p>
             <DemoTemplate
-              title="app > Example.tsx"
-              code={`import React from "react";
-import Reveal from "./Reveal"; // Adjust the import path based on your project structure
+              title="Demo"
+              code={`<div className="container p-5 flex gap-16">
+<Reveal delay={1}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal direction="down" delay={1.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        JR
+        <span className="bg-black text-primary">ui</span>
+      </h1>
+    </Reveal>
+    <Reveal direction="left" delay={1.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Jrui}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal direction="up" delay={1.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Jrui! He's the mascot of these parts!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
 
-const Example: React.FC = () => {
-  return (
-    <div>
-      <h1>Your Content Before Reveal</h1>
-
-      {/* Example with default settings (up direction, default delay) */}
-      <Reveal>
-        <p>This content will be revealed with default settings.</p>
-      </Reveal>
-
-      {/* Example with custom direction (right) and delay */}
-      <Reveal direction="right" delay={0.5}>
-        <p>This content will be revealed from the right with a delay of 0.5 seconds.</p>
-      </Reveal>
-
-      {/* Example with custom direction (down) and no delay */}
-      <Reveal direction="down">
-        <p>This content will be revealed from the bottom with no delay.</p>
-      </Reveal>
-
-      {/* Example with custom direction (left) and custom class name */}
-      <Reveal direction="left" className="ligma-nutz">
-        <p>This content will be revealed from the left with default delay.</p>
-      </Reveal>
-
-      <h1>Your Content After Reveal</h1>
-    </div>
-  );
-};
-
-export default Example;
-              
+<Reveal duration={0.25} delay={2}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal direction="left" duration={0.75} delay={2.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        SC
+        <span className="bg-black text-primary">ooty</span>
+      </h1>
+    </Reveal>
+    <Reveal duration={0.15} direction="right" delay={2.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Scooty}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal duration={1.25} direction="left" delay={2.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Scooty! She's Jrui's step-sis!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
+<Reveal duration={1} delay={3}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal duration={1.5} direction="right" delay={3.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        BO
+        <span className="bg-black text-primary">oty</span>
+      </h1>
+    </Reveal>
+    <Reveal duration={1.8} direction="right" delay={3.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Booty}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal duration={2} direction="right" delay={3.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Booty! He's Jrui's step-bro!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
+</div>
 `}
             >
               <RevealDemo />
             </DemoTemplate>
+          </section>
+        </Reveal>
+        <Reveal>
+          <section className="mb-8">
+            <h3 className="text-primary text-2xl font-semibold mb-4">Props</h3>
+            <p className="mb-4">
+              The `Reveal` component accepts the following props for controlling
+              its animation behavior:
+            </p>
+            <ul>
+              <li>
+                <strong>
+                  direction?: "up" | "down" | "left" | "right" (default: "up"){" "}
+                  <br />
+                </strong>{" "}
+                This prop determines the direction from which the component will
+                be revealed. Possible values: "up", "down", "left", or "right".
+              </li>
+              <li>
+                <strong>
+                  delay?: number (default: 0.2) <br />
+                </strong>{" "}
+                Specifies the delay before the animation starts after the
+                component comes into view. Measured in seconds.
+              </li>
+              <li>
+                <strong>
+                  duration?: number (default: 0.5) <br />
+                </strong>{" "}
+                Determines the duration of the animation. Measured in seconds.
+              </li>
+              <li>
+                <strong>children: ReactNode:</strong>
+                <br /> Required prop representing the content that you want to
+                animate.
+              </li>
+              <li>
+                <strong>className?: string:</strong> <br /> Prop for adding
+                custom classes to the animated component for styling purposes.
+              </li>
+            </ul>
           </section>
         </Reveal>
         <Reveal>
@@ -192,8 +273,8 @@ const Example: React.FC = () => {
         <p>This content will be revealed from the bottom with no delay.</p>
       </Reveal>
 
-      {/* Example with custom direction (left) and custom class name */}
-      <Reveal direction="left" className="ligma-nutz">
+      {/* Example with custom direction (left), duration and custom class name */}
+      <Reveal duration={1} direction="left" className="ligma-nutz">
         <p>This content will be revealed from the left with default delay.</p>
       </Reveal>
 

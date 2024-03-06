@@ -33,15 +33,15 @@ const RevealDemo = () => {
         </div>
       </Reveal>
 
-      <Reveal delay={2}>
+      <Reveal duration={0.25} delay={2}>
         <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
-          <Reveal direction="left" delay={2.2}>
+          <Reveal direction="left" duration={0.75} delay={2.2}>
             <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
               SC
               <span className="bg-black text-primary">ooty</span>
             </h1>
           </Reveal>
-          <Reveal direction="right" delay={2.4}>
+          <Reveal duration={0.15} direction="right" delay={2.4}>
             <Image
               height={200}
               width={200}
@@ -50,22 +50,22 @@ const RevealDemo = () => {
               className="my-2"
             ></Image>
           </Reveal>
-          <Reveal direction="left" delay={2.6}>
+          <Reveal duration={1.25} direction="left" delay={2.6}>
             <p className=" font-semibold text-center my-2 ">
               Say hello to Scooty! She's Jrui's step-sis!
             </p>
           </Reveal>
         </div>
       </Reveal>
-      <Reveal delay={3}>
+      <Reveal duration={1} delay={3}>
         <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
-          <Reveal direction="right" delay={3.2}>
+          <Reveal duration={1.5} direction="right" delay={3.2}>
             <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
               BO
               <span className="bg-black text-primary">oty</span>
             </h1>
           </Reveal>
-          <Reveal direction="right" delay={3.4}>
+          <Reveal duration={1.8} direction="right" delay={3.4}>
             <Image
               height={200}
               width={200}
@@ -74,7 +74,7 @@ const RevealDemo = () => {
               className="my-2"
             ></Image>
           </Reveal>
-          <Reveal direction="right" delay={3.6}>
+          <Reveal duration={2} direction="right" delay={3.6}>
             <p className=" font-semibold text-center my-2 ">
               Say hello to Booty! He's Jrui's step-bro!
             </p>
