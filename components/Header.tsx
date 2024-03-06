@@ -4,26 +4,24 @@ import UserButton from "./UserButton";
 
 const Header = () => {
   return (
-    <div className="bg-white p-4 flex justify-center md:justify-between items-center align-middle border-blue-500 border-b-2 fixed w-full top-0 z-50">
+    <div className="bg-white p-4 flex justify-center md:justify-between items-center align-middle border-t-0 border-l-0 border-r-0 shadow fixed w-full top-0 z-50 max-w-[100dvw]">
       <Link href={"/"}>
         <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-0">
           JR
-          <span className="bg-black text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-blue-500">
-            ui
-          </span>
+          <span className="bg-black text-primary">ui</span>
         </h1>
       </Link>
       <div className="flex space-x-2">
         <Link
           className=" px-4 py-2 text-black bg-white
-            border-blue-500 border-2 "
+            border border-gradient "
           href="/docs"
         >
           Docs
         </Link>
         <Link
           className=" px-4 py-2 text-black bg-white
-          border-blue-500 border-2"
+          border border-gradient"
           href="https://www.jordanready.com/"
         >
           Developer

@@ -11,7 +11,7 @@ const DocLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
       <div className="flex">
         <Sidebar />
         {/* Middle Content */}
-        <div className="">{children}</div>
+        <div className="md:ml-[200px]">{children}</div>
       </div>
     </div>
   );
