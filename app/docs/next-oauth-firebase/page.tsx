@@ -1,6 +1,7 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
 
 const NextOauthFirebase = () => {
   return (
@@ -22,6 +23,14 @@ const NextOauthFirebase = () => {
               dive into the detailed step-by-step guides by clicking on the
               respective steps card.
             </p>
+            <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+              <Link
+                target="blank"
+                href={"https://auth-firebase-starter-kit.vercel.app/"}
+              >
+                Live Preview
+              </Link>
+            </div>
           </section>
         </Reveal>
 
