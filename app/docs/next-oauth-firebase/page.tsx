@@ -21,7 +21,8 @@ const NextOauthFirebase = () => {
               seamless authentication. Follow the outlined steps to effortlessly
               set up your project. If you're new to any part of the process,
               dive into the detailed step-by-step guides by clicking on the
-              respective steps card.
+              respective steps card. Fun fact: this site was built using this
+              very template!
             </p>
             <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
               <Link

@@ -14,19 +14,17 @@ export default function Home() {
         <p className="md:text-2xl">
           Elevate your UI experience with JRui - the perfect companion for your{" "}
           <br />
-          Next.js, React, TypeScript, and Firebase projects.
+          Next.js, React, and TypeScript projects.
         </p>
       </Reveal>
-      <Reveal delay={0.6}>
-        <div className="mt-8">
-          <Link
-            className=" px-4 py-2 text-black bg-white
-            border-blue-500 border-2 w-40 "
-            href="/docs"
-          >
-            Get Started
-          </Link>
-        </div>
+      <Reveal className="flex center" delay={0.6}>
+        <Link
+          className=" mt-4 btn-hover px-4 py-2 text-black bg-white
+          border border-gradient"
+          href="/docs"
+        >
+          Get Started
+        </Link>
       </Reveal>
     </div>
   );
