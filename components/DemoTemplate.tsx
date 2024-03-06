@@ -3,15 +3,21 @@ import React, { useEffect, useRef, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import styles from "./CodeTemplate.module.css";
-import Clipboard from "clipboard";
 import { ClipboardPlus } from "lucide-react";
+import Clipboard from "clipboard";
+import Reveal from "./Reveal";
 
-type CodeTemplateProps = {
+type DemoTemplateProps = {
+  title: string;
   code: string;
-  fileName: string;
+  children: JSX.Element;
 };
 
-function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
+function DemoTemplate({
+  title,
+  code,
+  children,
+}: DemoTemplateProps): JSX.Element {
   const codeRef = useRef<HTMLDivElement | null>(null);
   const copyButtonRef = useRef<HTMLButtonElement | null>(null);
   const [clipboardInitialized, setClipboardInitialized] = useState(false);
@@ -36,7 +42,7 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
-        <h2>{fileName}</h2>
+        <h2>{title}</h2>
         <button ref={copyButtonRef} className="copy-button flex p-2 w-[130px]">
           <ClipboardPlus />
           <span className="w-1" /> Copy Code
@@ -46,12 +52,10 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
         className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto`}
         ref={codeRef}
       >
-        <SyntaxHighlighter language="jsx" style={vscDarkPlus}>
-          {code}
-        </SyntaxHighlighter>
+        {children}
       </div>
     </div>
   );
 }
 
-export default CodeTemplate;
+export default DemoTemplate;

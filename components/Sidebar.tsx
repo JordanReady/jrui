@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Reveal from "./Reveal";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -47,7 +48,7 @@ const Sidebar = () => {
         className={`w-[200px] min-w-[200px] max-w-[200px] md:w-1/6 p-2 flex flex-col md:mt-[1.5rem]  ${
           isSidebarOpen
             ? "hidden md:inline-flex "
-            : "fixed border-2 h-[100dvh] border-blue-500 border-t-0 border-l-0 md:flex-block md:border-0  bg-white"
+            : "fixed border-2 h-[100dvh] z-[999] border-blue-500 border-t-0 border-l-0 md:flex-block md:border-0  bg-white"
         }`}
       >
         <h1 className="text-primary font-semibold">Getting Started</h1>

@@ -2,6 +2,8 @@ import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
 import CodeTemplate from "@/components/CodeTemplate";
+import DemoTemplate from "@/components/DemoTemplate";
+import RevealDemo from "@/components/demos/RevealDemo";
 
 const RevealComponent = () => {
   return (
@@ -9,15 +11,8 @@ const RevealComponent = () => {
       <div className="container mx-auto py-8 relative">
         <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
           <Reveal>
-            <h1 className="text-4xl font-bold mb-4">Reveal</h1>
+            <h1 className="text-4xl font-bold ">Reveal</h1>
           </Reveal>
-          <div className="flex gap-2">
-            <Reveal>
-              <span className="  border border-gradient px-4 py-2">
-                Framer Motion
-              </span>
-            </Reveal>
-          </div>
         </div>
         <Reveal>
           <section className="mb-8">
@@ -31,6 +26,47 @@ const RevealComponent = () => {
               gradually revealing or moving the child elements based on the
               specified direction and delay.
             </p>
+            <DemoTemplate
+              title="app > Example.tsx"
+              code={`import React from "react";
+import Reveal from "./Reveal"; // Adjust the import path based on your project structure
+
+const Example: React.FC = () => {
+  return (
+    <div>
+      <h1>Your Content Before Reveal</h1>
+
+      {/* Example with default settings (up direction, default delay) */}
+      <Reveal>
+        <p>This content will be revealed with default settings.</p>
+      </Reveal>
+
+      {/* Example with custom direction (right) and delay */}
+      <Reveal direction="right" delay={0.5}>
+        <p>This content will be revealed from the right with a delay of 0.5 seconds.</p>
+      </Reveal>
+
+      {/* Example with custom direction (down) and no delay */}
+      <Reveal direction="down">
+        <p>This content will be revealed from the bottom with no delay.</p>
+      </Reveal>
+
+      {/* Example with custom direction (left) and custom class name */}
+      <Reveal direction="left" className="ligma-nutz">
+        <p>This content will be revealed from the left with default delay.</p>
+      </Reveal>
+
+      <h1>Your Content After Reveal</h1>
+    </div>
+  );
+};
+
+export default Example;
+              
+`}
+            >
+              <RevealDemo />
+            </DemoTemplate>
           </section>
         </Reveal>
         <Reveal>
@@ -76,12 +112,14 @@ interface RevealProps {
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
   children: ReactNode;
+  className?: string;
 }
 
 const Reveal: FC<RevealProps> = ({
   direction = "up",
   delay = 0.2,
   children,
+  className,
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -107,13 +145,65 @@ const Reveal: FC<RevealProps> = ({
   };
 
   return (
-    <motion.div ref={ref} initial={initialStyles} animate={controls}>
+    <motion.div
+      className={className}
+      ref={ref}
+      initial={initialStyles}
+      animate={controls}
+    >
       {children}
     </motion.div>
   );
 };
 
 export default Reveal;
+              
+`}
+            />
+          </section>
+        </Reveal>
+        <Reveal>
+          <section className="mb-8">
+            <h3 className="text-primary text-2xl font-semibold mb-4">
+              Example Use Case
+            </h3>
+            <CodeTemplate
+              fileName="app > Example.tsx"
+              code={`import React from "react";
+import Reveal from "./Reveal"; // Adjust the import path based on your project structure
+
+const Example: React.FC = () => {
+  return (
+    <div>
+      <h1>Your Content Before Reveal</h1>
+
+      {/* Example with default settings (up direction, default delay) */}
+      <Reveal>
+        <p>This content will be revealed with default settings.</p>
+      </Reveal>
+
+      {/* Example with custom direction (right) and delay */}
+      <Reveal direction="right" delay={0.5}>
+        <p>This content will be revealed from the right with a delay of 0.5 seconds.</p>
+      </Reveal>
+
+      {/* Example with custom direction (down) and no delay */}
+      <Reveal direction="down">
+        <p>This content will be revealed from the bottom with no delay.</p>
+      </Reveal>
+
+      {/* Example with custom direction (left) and custom class name */}
+      <Reveal direction="left" className="ligma-nutz">
+        <p>This content will be revealed from the left with default delay.</p>
+      </Reveal>
+
+      <h1>Your Content After Reveal</h1>
+    </div>
+  );
+};
+
+export default Example;
+              
 `}
             />
           </section>

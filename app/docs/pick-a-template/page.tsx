@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 
 const PickTemplate = () => {
   return (
-    <DocLayout>
+    <DocLayout animate={false}>
       <div className="container mx-auto py-8">
         <Reveal>
           <h1 className="text-4xl font-bold mb-4">Pick a Template</h1>

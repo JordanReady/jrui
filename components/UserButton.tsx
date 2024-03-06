@@ -35,7 +35,7 @@ const UserButton = () => {
     <div className="relative">
       <button
         onClick={handleButtonClick}
-        className={`px-4 py-2 text-black bg-white border-blue-500 border-2 ${
+        className={`px-4 py-2 text-black bg-white border border-gradient ${
           session ? "signed-in" : ""
         }`}
       >

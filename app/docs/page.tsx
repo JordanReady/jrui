@@ -3,7 +3,7 @@ import DocLayout from "./DocLayout";
 
 const GettingStarted = () => {
   return (
-    <DocLayout>
+    <DocLayout animate={true}>
       <div className="container mx-auto py-8">
         <h1 className="text-4xl font-bold mb-4">
           Getting Started with JR

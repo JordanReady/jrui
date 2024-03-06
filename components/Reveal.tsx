@@ -7,12 +7,14 @@ interface RevealProps {
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
   children: ReactNode;
+  className?: string;
 }
 
 const Reveal: FC<RevealProps> = ({
   direction = "up",
   delay = 0.2,
   children,
+  className,
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -38,7 +40,12 @@ const Reveal: FC<RevealProps> = ({
   };
 
   return (
-    <motion.div ref={ref} initial={initialStyles} animate={controls}>
+    <motion.div
+      className={className}
+      ref={ref}
+      initial={initialStyles}
+      animate={controls}
+    >
       {children}
     </motion.div>
   );
