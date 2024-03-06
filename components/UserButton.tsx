@@ -23,14 +23,6 @@ const UserButton = () => {
     setShowDropdown(false);
   };
 
-  useEffect(() => {
-    if (session) {
-      console.log("User is signed in:", session.user);
-    } else {
-      console.log("User is not signed in");
-    }
-  }, [session]);
-
   return (
     <div className="relative">
       <button
