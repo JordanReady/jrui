@@ -19,6 +19,9 @@ li {
   margin-bottom: 0.5rem;
   font-size: 18px;
 }
+pre {
+  max-width: 57dvw !important;
+}
 .center {
   display: flex;
   justify-content: center;

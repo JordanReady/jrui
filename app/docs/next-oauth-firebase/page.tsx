@@ -47,7 +47,7 @@ const NextOauthFirebase = () => {
               with the project. Open your terminal and run the following command
               where you want to keep your project code:
             </p>
-            <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
+            <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-scroll ">
               {`git clone https://github.com/JordanReady/auth-firebase-starter-kit.git your-app-name`}
             </pre>
           </section>
