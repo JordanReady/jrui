@@ -15,6 +15,7 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
   const codeRef = useRef<HTMLDivElement | null>(null);
   const copyButtonRef = useRef<HTMLButtonElement | null>(null);
   const [clipboardInitialized, setClipboardInitialized] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     if (codeRef.current && copyButtonRef.current && !clipboardInitialized) {
@@ -31,6 +32,10 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
     }
   }, [clipboardInitialized, code]);
 
+  const toggleExpand = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll `}>
       <div
@@ -45,11 +50,20 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
       <div
         className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto`}
         ref={codeRef}
+        style={{ maxHeight: expanded ? "none" : "420px", overflow: "hidden" }}
       >
         <SyntaxHighlighter language="jsx" style={vscDarkPlus}>
           {code}
         </SyntaxHighlighter>
       </div>
+      {!expanded && (
+        <button
+          className="btn-hover border border-gradient py-2 px-4 mt-[-2px]  cursor-pointer"
+          onClick={toggleExpand}
+        >
+          View More
+        </button>
+      )}
     </div>
   );
 }

@@ -14,8 +14,10 @@ html::-webkit-scrollbar {
 }
 
 /* custom styles */
-p {
+p,
+li {
   margin-bottom: 0.5rem;
+  font-size: 18px;
 }
 .center {
   display: flex;

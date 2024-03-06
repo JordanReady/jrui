@@ -1,42 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Reveal from "@/components/Reveal";
-
-interface RevealDemoProps {
-  direction: "up" | "down" | "left" | "right";
-  delay: number;
-  duration: number;
-  className: string;
-  animate: boolean;
-}
-
-const RevealDemo: React.FC<RevealDemoProps> = ({
-  direction,
-  delay,
-  duration,
-  className,
-  animate,
-}) => {
-  return (
-    <div className="w-[800px] mx-auto mt-8">
-      <div className={`border border-gradient border-bottom-none p-1`}>
-        <h2>Demo</h2>
-        <div className="bg-gray-300 p-4 rounded-md">
-          {animate && (
-            <Reveal
-              direction={direction}
-              delay={delay}
-              duration={duration}
-              className={className}
-            >
-              <div className="bg-gray-300 p-4 rounded-md">Your Content</div>
-            </Reveal>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
+import Jrui from "@/imgs/JRuiLogo.png";
+import Image from "next/image";
 
 const RevealDemoForm: React.FC = () => {
   const [direction, setDirection] = useState<"up" | "down" | "left" | "right">(
@@ -46,17 +12,22 @@ const RevealDemoForm: React.FC = () => {
   const [duration, setDuration] = useState<number>(0.5);
   const [className, setClassName] = useState<string>("");
   const [animate, setAnimate] = useState(false);
+  const [showImg, setShowImg] = useState(false);
 
   const handleView = () => {
     setAnimate(true);
     setTimeout(() => {
       setAnimate(false);
-    }, 5000);
+    }, 3500);
+  };
+
+  const handleImg = () => {
+    setShowImg(!showImg);
   };
 
   return (
     <div className="flex flex-col md:flex-row">
-      <form className="w-1/2 p-8">
+      <form className="w-2/3 p-8">
         <div className="mb-4 flex flex-col">
           <label className="text-primary font-semibold" htmlFor="direction">
             Direction:
@@ -87,7 +58,7 @@ const RevealDemoForm: React.FC = () => {
             onChange={(e) => setDelay(parseFloat(e.target.value))}
             step="0.1"
             min="0"
-            className="p-2 border rounded-md"
+            className="p-2 border rounded-md w-full"
           />
         </div>
 
@@ -102,7 +73,7 @@ const RevealDemoForm: React.FC = () => {
             onChange={(e) => setDuration(parseFloat(e.target.value))}
             step="0.1"
             min="0"
-            className="p-2 border rounded-md"
+            className="w-full p-2 border rounded-md"
           />
         </div>
 
@@ -115,50 +86,81 @@ const RevealDemoForm: React.FC = () => {
             id="className"
             value={className}
             onChange={(e) => setClassName(e.target.value)}
-            className="p-2 border rounded-md"
+            className="w-full p-2 border rounded-md"
             placeholder="Try Tailwind here!"
           />
         </div>
-        {animate ? (
+        <div className="flex gap-1">
+          {animate ? (
+            <button
+              type="button"
+              onClick={handleView}
+              className="border-gradient border  p-2 rounded-md"
+              disabled={true}
+            >
+              View Animation
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleView}
+              className="border-gradient border btn-hover p-2 rounded-md"
+            >
+              View Animation
+            </button>
+          )}
           <button
             type="button"
-            onClick={handleView}
-            className="bg-blue-500 text-white p-2 rounded-md"
-            disabled={true}
-          >
-            View
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={handleView}
+            onClick={handleImg}
             className="border-gradient border btn-hover p-2 rounded-md"
           >
-            View Animation
+            Change Child
           </button>
-        )}
+        </div>
       </form>
       <div className="flex w-full h-[420] center">
-        <div className="w-[300px] h-[300px] center bg-slate-200">
-          {animate ? (
+        <div className="w-[300px] h-[300px] center border-gradient bg-slate-200">
+          {animate && (
             <Reveal
               direction={direction}
               delay={delay}
               duration={duration}
               className={className}
             >
-              <h1 className=" text-6xl md:text-9xl font-bold mb-4">
-                JR
-                <span className="bg-black text-primary">ui</span>
-              </h1>
+              <div>
+                {showImg ? (
+                  <Image
+                    alt="It's Jrui the mascott!!"
+                    src={Jrui}
+                    width={300}
+                    height={300}
+                    placeholder="blur"
+                  />
+                ) : (
+                  <h1 className="text-6xl md:text-9xl font-bold mb-4">
+                    JR
+                    <span className="bg-black text-primary">ui</span>
+                  </h1>
+                )}
+              </div>
             </Reveal>
-          ) : (
-            <h1
-              className={` text-6xl md:text-9xl font-bold mb-4 ${className} `}
-            >
-              JR
-              <span className="bg-black text-primary">ui</span>
-            </h1>
+          )}
+          {!animate && (
+            <div className={className}>
+              {showImg ? (
+                <Image
+                  alt="It's Jrui the mascott!!"
+                  src={Jrui}
+                  width={300}
+                  height={300}
+                />
+              ) : (
+                <h1 className="text-6xl md:text-9xl font-bold mb-4">
+                  JR
+                  <span className="bg-black text-primary">ui</span>
+                </h1>
+              )}
+            </div>
           )}
         </div>
       </div>
