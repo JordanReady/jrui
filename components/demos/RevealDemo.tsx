@@ -7,11 +7,11 @@ import Image from "next/image";
 
 const RevealDemo = () => {
   return (
-    <div className="container p-5 flex gap-16">
+    <div className="container p-5 flex gap-16 flex-col md:flex-row center">
       <Reveal delay={1}>
         <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
           <Reveal direction="down" delay={1.2}>
-            <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+            <h1 className="  text-4xl font-bold my-2">
               JR
               <span className="bg-black text-primary">ui</span>
             </h1>
@@ -36,7 +36,7 @@ const RevealDemo = () => {
       <Reveal duration={0.25} delay={2}>
         <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
           <Reveal direction="left" duration={0.75} delay={2.2}>
-            <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+            <h1 className="  text-4xl font-bold my-2">
               SC
               <span className="bg-black text-primary">ooty</span>
             </h1>
@@ -60,7 +60,7 @@ const RevealDemo = () => {
       <Reveal duration={1} delay={3}>
         <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
           <Reveal duration={1.5} direction="right" delay={3.2}>
-            <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+            <h1 className="  text-4xl font-bold my-2">
               BO
               <span className="bg-black text-primary">oty</span>
             </h1>

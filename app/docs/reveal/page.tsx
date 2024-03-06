@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import CodeTemplate from "@/components/CodeTemplate";
 import DemoTemplate from "@/components/DemoTemplate";
 import RevealDemo from "@/components/demos/RevealDemo";
+import RevealDemo2 from "@/components/demos/RevealDemo2";
 
 const RevealComponent = () => {
   return (
@@ -24,7 +25,8 @@ const RevealComponent = () => {
               animation and the React Intersection Observer hook to detect when
               the component comes into view. It provides a smooth transition by
               gradually revealing or moving the child elements based on the
-              specified direction and delay.
+              specified direction and delay. This entire site uses the Reveal
+              conponent!
             </p>
             <DemoTemplate
               title="Demo"
@@ -148,6 +150,87 @@ const RevealComponent = () => {
                 custom classes to the animated component for styling purposes.
               </li>
             </ul>
+            <DemoTemplate
+              title="Props Demo"
+              code={`<div className="container p-5 flex gap-16">
+<Reveal delay={1}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal direction="down" delay={1.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        JR
+        <span className="bg-black text-primary">ui</span>
+      </h1>
+    </Reveal>
+    <Reveal direction="left" delay={1.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Jrui}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal direction="up" delay={1.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Jrui! He's the mascot of these parts!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
+
+<Reveal duration={0.25} delay={2}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal direction="left" duration={0.75} delay={2.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        SC
+        <span className="bg-black text-primary">ooty</span>
+      </h1>
+    </Reveal>
+    <Reveal duration={0.15} direction="right" delay={2.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Scooty}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal duration={1.25} direction="left" delay={2.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Scooty! She's Jrui's step-sis!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
+<Reveal duration={1} delay={3}>
+  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+    <Reveal duration={1.5} direction="right" delay={3.2}>
+      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
+        BO
+        <span className="bg-black text-primary">oty</span>
+      </h1>
+    </Reveal>
+    <Reveal duration={1.8} direction="right" delay={3.4}>
+      <Image
+        height={200}
+        width={200}
+        alt="JRui the mascot!"
+        src={Booty}
+        className="my-2"
+      ></Image>
+    </Reveal>
+    <Reveal duration={2} direction="right" delay={3.6}>
+      <p className=" font-semibold text-center my-2 ">
+        Say hello to Booty! He's Jrui's step-bro!
+      </p>
+    </Reveal>
+  </div>
+</Reveal>
+</div>
+`}
+            >
+              <RevealDemo2></RevealDemo2>
+            </DemoTemplate>
           </section>
         </Reveal>
         <Reveal>
@@ -192,6 +275,7 @@ import { useInView } from "react-intersection-observer";
 interface RevealProps {
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
+  duration?: number;
   children: ReactNode;
   className?: string;
 }
@@ -199,6 +283,7 @@ interface RevealProps {
 const Reveal: FC<RevealProps> = ({
   direction = "up",
   delay = 0.2,
+  duration = 0.5,
   children,
   className,
 }) => {
@@ -213,7 +298,7 @@ const Reveal: FC<RevealProps> = ({
         opacity: 1,
         y: 0,
         x: 0,
-        transition: { duration: 0.5, delay },
+        transition: { duration: duration, delay },
       });
     }
   }, [controls, inView, delay]);
@@ -238,6 +323,7 @@ const Reveal: FC<RevealProps> = ({
 };
 
 export default Reveal;
+              
               
 `}
             />

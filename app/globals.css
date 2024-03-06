@@ -17,6 +17,20 @@ html::-webkit-scrollbar {
 p {
   margin-bottom: 0.5rem;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-hover:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to bottom right, #9333ea, #3b82f6);
+  transition: color 0.1s, transform 0.1s ease-in-out;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .text-primary {
   color: transparent;
   -webkit-background-clip: text;

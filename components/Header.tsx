@@ -19,14 +19,14 @@ const Header = () => {
         </Link>
         <div className="flex space-x-2">
           <Link
-            className=" px-4 py-2 text-black bg-white
+            className=" btn-hover px-4 py-2 text-black bg-white
             border border-gradient "
             href="/docs"
           >
             Docs
           </Link>
           <Link
-            className=" px-4 py-2 text-black bg-white
+            className="btn-hover px-4 py-2 text-black bg-white
           border border-gradient"
             href="https://www.jordanready.com/"
           >
