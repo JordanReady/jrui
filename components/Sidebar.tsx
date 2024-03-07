@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { CornerDownRight, Menu, X } from "lucide-react";
 import Reveal from "./Reveal";
 
 const Sidebar = () => {
@@ -82,6 +82,20 @@ const Sidebar = () => {
           href="/docs/next-oauth-firebase"
         >
           Next/OAuth/Firebase
+        </Link>
+
+        <Link
+          className={` group flex ${getLinkClassName(
+            "next-oauth-firebase/docs"
+          )}`}
+          href="/docs/next-oauth-firebase/docs"
+        >
+          <CornerDownRight
+            className=" group-hover:text-purple-600 "
+            size={20}
+            strokeWidth={1}
+          />
+          Docs Layout
         </Link>
         <h1 className="text-primary font-semibold">Components</h1>
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
