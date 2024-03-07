@@ -5,8 +5,8 @@ import Jrui from "@/imgs/JRuiLogo.png";
 
 export default function Hero() {
   return (
-    <div className="container m-auto flex flex-wrap justify-around items-center p-8">
-      <div className="w-full sm:w-[50%] pt-[85px] flex-col center md:block max-w-[469px] ">
+    <div className="container m-auto flex flex-wrap justify-around items-center py-4 px-8">
+      <div className="w-full sm:w-[50%] pt-[76px] flex-col center md:block max-w-[469px] ">
         <Reveal className="flex">
           <h1 className=" text-6xl md:text-9xl font-bold mb-4">
             JR
@@ -31,7 +31,7 @@ export default function Hero() {
           </Link>
         </Reveal>
       </div>
-      <div className="w-full sm:w-[50%] pt-[85px] flex flex-col max-w-[469px] ">
+      <div className="w-full sm:w-[50%]  md:pt-[85px] pt-4 center max-w-[469px] ">
         <Reveal>
           <Image src={Jrui} alt="It's JRui the Mascot!!" />
         </Reveal>

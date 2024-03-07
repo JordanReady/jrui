@@ -71,11 +71,24 @@ const Sidebar = () => {
           Project Structure
         </Link>
         <Link
+          className={getLinkClassName("adding-features")}
+          href="/docs/adding-features"
+        >
+          Adding Features
+        </Link>
+        <Link
+          className={getLinkClassName("adding-sections")}
+          href="/docs/adding-sections"
+        >
+          Adding Sections
+        </Link>
+        <Link
           className={getLinkClassName("adding-components")}
           href="/docs/adding-components"
         >
           Adding Components
         </Link>
+
         <h1 className="text-primary font-semibold">Templates</h1>
         <Link
           className={getLinkClassName("next-oauth-firebase")}
@@ -96,6 +109,14 @@ const Sidebar = () => {
             strokeWidth={1}
           />
           Docs Layout
+        </Link>
+        <h1 className="text-primary font-semibold">Features</h1>
+        <Link className={getLinkClassName("dark-mode")} href="/docs/dark-mode">
+          Dark Mode
+        </Link>
+        <h1 className="text-primary font-semibold">Sections</h1>
+        <Link className={getLinkClassName("hero")} href="/docs/hero">
+          Hero
         </Link>
         <h1 className="text-primary font-semibold">Components</h1>
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
