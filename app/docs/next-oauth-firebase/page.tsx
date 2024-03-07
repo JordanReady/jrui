@@ -24,13 +24,25 @@ const NextOauthFirebase = () => {
               respective steps card. Fun fact: this site was built using this
               very template!
             </p>
-            <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
-              <Link
-                target="blank"
-                href={"https://auth-firebase-starter-kit.vercel.app/"}
-              >
-                Live Preview
-              </Link>
+            <div className="flex flex-wrap gap-2">
+              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+                <Link
+                  target="blank"
+                  href={"https://auth-firebase-starter-kit.vercel.app/"}
+                >
+                  Live Preview
+                </Link>
+              </div>
+              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+                <Link target="blank" href={"/docs/next-oauth-firebase/setup"}>
+                  Setup Video Guide
+                </Link>
+              </div>
+              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+                <Link target="blank" href={"/docs/next-oauth-firebase/deploy"}>
+                  Deploy Video Guide
+                </Link>
+              </div>
             </div>
           </section>
         </Reveal>
