@@ -27,12 +27,26 @@ pre {
   justify-content: center;
   align-items: center;
 }
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.card-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .btn-hover:hover {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   background-image: linear-gradient(to bottom right, #9333ea, #3b82f6);
-  transition: color 0.1s, transform 0.1s ease-in-out;
+  transition: color 0.2s, transform 0.2s ease-in-out;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -42,11 +56,9 @@ pre {
   background-clip: text;
   background-image: linear-gradient(to bottom right, #9333ea, #3b82f6);
 }
-
 .bg-gradient {
   background: linear-gradient(to right, #8250c8, #0075ff);
 }
-
 .border-gradient {
   border: 2px solid;
   border-image: linear-gradient(to right, #8250c8, #0075ff);
@@ -57,7 +69,6 @@ pre {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 .border-bottom-none {
   border-bottom: none !important;
 }

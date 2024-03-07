@@ -5,16 +5,16 @@ import Reveal from "./Reveal";
 
 const Header = () => {
   return (
-    <div className="">
-      <Reveal
-        className="bg-white p-4 flex justify-center md:justify-between items-center align-middle border-t-0 border-l-0 border-r-0 shadow fixed w-full top-0 z-50 max-w-[100dvw]"
-        direction="down"
-        delay={0}
-      >
+    <Reveal
+      className="bg-white p-4 flex center md:justify-center items-center align-middle border-t-0 border-l-0 border-r-0 shadow fixed w-full top-0 z-50"
+      direction="down"
+      delay={0}
+    >
+      <div className="container flex justify-between">
         <Link href={"/"}>
           <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-0">
             JR
-            <span className="bg-black text-primary">ui</span>
+            <span className="bg-black text-primary font-normal">ui</span>
           </h1>
         </Link>
         <div className="flex space-x-2">
@@ -34,8 +34,8 @@ const Header = () => {
           </Link>
           <UserButton />
         </div>
-      </Reveal>
-    </div>
+      </div>
+    </Reveal>
   );
 };
 
