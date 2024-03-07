@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { CornerDownRight, Menu, X } from "lucide-react";
 import Reveal from "./Reveal";
+import { act } from "react-dom/test-utils";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
+  const [activeSubLink, setActiveSubLink] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const getLinkClassName = (path: string) => {
@@ -17,11 +19,26 @@ const Sidebar = () => {
       : baseClassName;
   };
 
+  const getSubLinkClassName = (path: string) => {
+    const baseClassName =
+      "group hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:translate-x-1 duration-100";
+
+    const subLink = window.location.pathname.split("/").slice(-2).join("/");
+
+    return subLink === path
+      ? `${baseClassName} group text-primary translate-x-1`
+      : baseClassName;
+  };
+
   useEffect(() => {
+    const [, subPath] = window.location.pathname.split("/").slice(-2);
     setActiveLink(window.location.pathname.split("/").pop() || "");
+    setActiveSubLink(subPath || "");
 
     const handleRouteChange = () => {
+      const [, subPath] = window.location.pathname.split("/").slice(-2);
       setActiveLink(window.location.pathname.split("/").pop() || "");
+      setActiveSubLink(subPath || "");
     };
 
     window.addEventListener("popstate", handleRouteChange);
@@ -98,7 +115,7 @@ const Sidebar = () => {
         </Link>
 
         <Link
-          className={` group flex ${getLinkClassName(
+          className={` group flex ${getSubLinkClassName(
             "next-oauth-firebase/docs"
           )}`}
           href="/docs/next-oauth-firebase/docs"
