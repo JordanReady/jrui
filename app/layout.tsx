@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import SessionProvider from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import authOptions from "@/auth";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default async function RootLayout({
           <Header />
           {children}
         </body>
+        <GoogleTagManager gtmId="GTM-MLTHWR9B" />
       </html>
     </SessionProvider>
   );
