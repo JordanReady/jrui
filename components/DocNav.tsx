@@ -91,7 +91,7 @@ const DocNav: React.FC = () => {
   }, [urlInput]);
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 pl-8">
       <Link href={prevUrl} className="btn-hover px-4 py-2 border-gradient">
         Prev: {prevTitle}
       </Link>

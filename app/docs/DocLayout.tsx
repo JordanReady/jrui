@@ -12,7 +12,7 @@ interface DefaultLayoutProps {
 
 const DocLayout: React.FC<DefaultLayoutProps> = ({ children, animate }) => {
   return (
-    <div className="container ml-8 mb-8 pt-[78px] md:pt-[68px]">
+    <div className="container md:ml-8 mb-8 pt-[90px] md:pt-[68px]">
       <div className="flex">
         {animate ? (
           <Reveal direction="right" delay={0.1}>

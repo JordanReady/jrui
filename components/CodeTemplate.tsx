@@ -16,6 +16,7 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
   const copyButtonRef = useRef<HTMLButtonElement | null>(null);
   const [clipboardInitialized, setClipboardInitialized] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [showViewMoreButton, setShowViewMoreButton] = useState(false);
 
   useEffect(() => {
     if (codeRef.current && copyButtonRef.current && !clipboardInitialized) {
@@ -30,6 +31,11 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
 
       setClipboardInitialized(true);
     }
+
+    // Check if the code container height exceeds the maximum height
+    const codeContainerHeight = codeRef.current?.offsetHeight || 0;
+    const maxHeight = 419;
+    setShowViewMoreButton(codeContainerHeight > maxHeight);
   }, [clipboardInitialized, code]);
 
   const toggleExpand = () => {
@@ -37,18 +43,21 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
   };
 
   return (
-    <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll `}>
+    <div className={`max-w-[710px] overflow-x-scroll `}>
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
         <h2>{fileName}</h2>
-        <button ref={copyButtonRef} className="copy-button flex p-2 w-[130px]">
+        <button
+          ref={copyButtonRef}
+          className="copy-button flex content-around p-2 w-[135px]"
+        >
           <ClipboardPlus />
-          <span className="w-1" /> Copy Code
+          <span className="" /> Copy Code
         </button>
       </div>
       <div
-        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto`}
+        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto `}
         ref={codeRef}
         style={{ maxHeight: expanded ? "none" : "420px", overflow: "hidden" }}
       >
@@ -56,9 +65,9 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
           {code}
         </SyntaxHighlighter>
       </div>
-      {!expanded && (
+      {showViewMoreButton && !expanded && (
         <button
-          className="btn-hover border border-gradient py-2 px-4 mt-[-2px]  cursor-pointer"
+          className="btn-hover w-full border border-gradient py-2 px-4 mt-[-2px]  cursor-pointer"
           onClick={toggleExpand}
         >
           View More

@@ -93,7 +93,7 @@ li {
   font-size: 18px;
 }
 pre {
-  max-width: 57dvw !important;
+  max-width: 90% !important;
 }
 .center {
   display: flex;
