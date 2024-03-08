@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { CornerDownRight, Menu, X } from "lucide-react";
-import Reveal from "./Reveal";
-import { act } from "react-dom/test-utils";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
