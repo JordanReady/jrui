@@ -119,7 +119,7 @@ const RevealDemoForm: React.FC = () => {
         </div>
       </form>
       <div className="flex w-full h-[420] center">
-        <div className="w-[300px] h-[300px] center border-gradient bg-slate-200">
+        <div className="w-[300px] h-[300px] center border-gradient bg-slate-200 dark:dark:bg-slate-900">
           {animate && (
             <Reveal
               direction={direction}
@@ -139,9 +139,7 @@ const RevealDemoForm: React.FC = () => {
                 ) : (
                   <h1 className="text-6xl md:text-9xl font-bold mb-4">
                     JR
-                    <span className="bg-black text-primary font-normal">
-                      ui
-                    </span>
+                    <span className=" text-primary font-normal">ui</span>
                   </h1>
                 )}
               </div>
@@ -159,7 +157,7 @@ const RevealDemoForm: React.FC = () => {
               ) : (
                 <h1 className="text-6xl md:text-9xl font-bold mb-4">
                   JR
-                  <span className="bg-black text-primary font-normal">ui</span>
+                  <span className=" text-primary font-normal">ui</span>
                 </h1>
               )}
             </div>

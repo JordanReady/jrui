@@ -59,7 +59,7 @@ const NextOauthFirebase = () => {
               with the project. Open your terminal and run the following command
               where you want to keep your project code:
             </p>
-            <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-scroll ">
+            <pre className=" dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md overflow-x-scroll ">
               {`git clone https://github.com/JordanReady/auth-firebase-starter-kit.git your-app-name`}
             </pre>
           </section>
@@ -127,7 +127,7 @@ const NextOauthFirebase = () => {
             </p>
             <ol>
               <li>Create a .env file in your project root with</li>
-              <pre className="w-max bg-gray-200 p-4 rounded-md">
+              <pre className=" dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
                 cp .env.example .env
               </pre>
               <li>
@@ -188,11 +188,11 @@ const NextOauthFirebase = () => {
             <h4>Deployment Steps:</h4>
             <ol>
               <li>Install the Vercel CLI by running:</li>
-              <pre className="w-max bg-gray-200 p-4 rounded-md">
+              <pre className=" dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
                 npm install -g vercel
               </pre>
               <li>Deploy to production by running:</li>
-              <pre className="w-max bg-gray-200 p-4 rounded-md">
+              <pre className=" dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
                 vercel --prod
               </pre>
               <li>Import environment variables on Vercel</li>

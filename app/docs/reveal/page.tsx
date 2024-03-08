@@ -247,14 +247,14 @@ const RevealComponent = () => {
               <li>
                 The `Reveal` component utilizes Framer Motion for animations.
                 Install it with:
-                <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
                   npm install framer-motion
                 </pre>{" "}
               </li>
               <li>
                 The `useInView` hook, used for detecting when the component is
                 in view, requires this dependency. Install it with:
-                <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
                   npm install react-intersection-observer
                 </pre>{" "}
               </li>

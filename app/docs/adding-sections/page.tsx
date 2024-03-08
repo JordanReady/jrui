@@ -35,11 +35,11 @@ const AddingSections = () => {
             </h2>
             <p>
               All JRui sections are organized within the{" "}
-              <pre className="w-max bg-gray-200 p-4 rounded-md">
+              <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
                 {`components`}
               </pre>{" "}
               or{" "}
-              <pre className="w-max bg-gray-200 p-4 rounded-md">
+              <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
                 {`components ${`>`} sections`}
               </pre>{" "}
               folder in your project. To integrate a section, navigate to the

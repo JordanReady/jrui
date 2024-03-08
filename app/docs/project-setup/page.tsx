@@ -31,7 +31,7 @@ const ProjectSetup = () => {
               Start your project by cloning the JRui template repository using
               the provided command:
             </p>
-            <pre className="w-max bg-gray-200 p-4 rounded-md">
+            <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
               {`git clone <repository-url>`}
             </pre>
             <p>
@@ -50,7 +50,7 @@ const ProjectSetup = () => {
               Navigate into the cloned project directory and install the
               required dependencies using npm:
             </p>
-            <pre className="w-max bg-gray-200 p-4 rounded-md">
+            <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
               {`cd <project-directory>\nnpm install`}
             </pre>
             <p>
@@ -66,7 +66,7 @@ const ProjectSetup = () => {
               Running the Template
             </h2>
             <p>Launch the project template with the following command:</p>
-            <pre className="w-max bg-gray-200 p-4 rounded-md">{`npm run dev`}</pre>
+            <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">{`npm run dev`}</pre>
             <p>
               This will start a development server, and you can view your
               project by navigating to the specified URL in your browser.
