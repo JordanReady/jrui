@@ -60,7 +60,7 @@ const NextOauthFirebase = () => {
               where you want to keep your project code:
             </p>
             <pre className="w-max bg-gray-200 p-4 rounded-md overflow-x-scroll ">
-              {`git clone https://github.com/JordanReady/next-oauth-firebase-docs-layout.git`}
+              {`git clone https://github.com/JordanReady/next-oauth-firebase-docs-layout.git your-app-name`}
             </pre>
           </section>
         </Reveal>
