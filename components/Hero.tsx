@@ -23,7 +23,7 @@ export default function Hero() {
         </Reveal>
         <Reveal className="flex" delay={0.6}>
           <Link
-            className=" mt-4 btn-hover px-4 py-2 text-black bg-white
+            className=" mt-4 btn-hover px-4 py-2 
            border border-gradient"
             href="/docs"
           >

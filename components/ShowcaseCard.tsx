@@ -17,7 +17,7 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({
 }) => {
   return (
     <Link
-      className="relative group w-[300px] min-h-[275px] bg-white dark:bg-white border border-gradient p-4 flex flex-col justify-between z-10 card-hover"
+      className="relative group w-[300px] min-h-[275px] border border-gradient p-4 flex flex-col justify-between z-10 card-hover"
       href={url}
       passHref
     >

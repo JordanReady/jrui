@@ -139,7 +139,9 @@ const RevealDemoForm: React.FC = () => {
                 ) : (
                   <h1 className="text-6xl md:text-9xl font-bold mb-4">
                     JR
-                    <span className="bg-black text-primary">ui</span>
+                    <span className="bg-black text-primary font-normal">
+                      ui
+                    </span>
                   </h1>
                 )}
               </div>
@@ -157,7 +159,7 @@ const RevealDemoForm: React.FC = () => {
               ) : (
                 <h1 className="text-6xl md:text-9xl font-bold mb-4">
                   JR
-                  <span className="bg-black text-primary">ui</span>
+                  <span className="bg-black text-primary font-normal">ui</span>
                 </h1>
               )}
             </div>

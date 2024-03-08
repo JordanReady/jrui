@@ -55,18 +55,20 @@ const Sidebar = () => {
       {/* Button to toggle the sidebar on mobile */}
       <button
         onClick={toggleSidebar}
-        className={`md:hidden ml-2 mt-[-3.85rem] z-[999] p-2 bg-white text-black border-2 border-blue-500 fixed `}
+        className={`md:hidden ml-2 z-[999] p-2 border-2 border-gradient fixed top-[4.75rem] left-[-.5rem]  bg-white dark:bg-[rgb(2,8,23)] `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>
       <div
-        className={`w-[200px] min-w-[200px] max-w-[200px] md:w-1/6 p-2 flex flex-col md:mt-[1.5rem]  ${
+        className={`w-[200px] min-w-[200px] max-w-[200px] md:w-1/6 p-2 flex flex-col mt-[-.125rem] md:mt-[1.5rem] ml-[-2.5rem]  ${
           isSidebarOpen
             ? "hidden md:inline-flex "
-            : "fixed border-2 h-[100dvh] z-[999] border-blue-500 border-t-0 border-l-0 md:flex-block md:border-0  bg-white"
+            : "fixed bg-white dark:bg-[rgb(2,8,23)] border-2 h-[100dvh] z-[998] border-gradient border-t-0 border-l-0 md:flex-block md:border-0  "
         }`}
       >
-        <h1 className="text-primary font-semibold">Getting Started</h1>
+        <h1 className="text-primary font-semibold text-xl mt-8 md:mt-0">
+          Getting Started
+        </h1>
         <Link
           className={getLinkClassName("pick-a-template")}
           href="/docs/pick-a-template"
@@ -104,7 +106,7 @@ const Sidebar = () => {
           Adding Components
         </Link>
 
-        <h1 className="text-primary font-semibold">Templates</h1>
+        <h1 className="text-primary font-semibold text-xl">Templates</h1>
         <Link
           className={getLinkClassName("next-oauth-firebase")}
           href="/docs/next-oauth-firebase"
@@ -125,15 +127,15 @@ const Sidebar = () => {
           />
           Docs Layout
         </Link>
-        <h1 className="text-primary font-semibold">Features</h1>
+        <h1 className="text-primary font-semibold text-xl">Features</h1>
         <Link className={getLinkClassName("dark-mode")} href="/docs/dark-mode">
           Dark Mode
         </Link>
-        <h1 className="text-primary font-semibold">Sections</h1>
+        <h1 className="text-primary font-semibold text-xl">Sections</h1>
         <Link className={getLinkClassName("hero")} href="/docs/hero">
           Hero
         </Link>
-        <h1 className="text-primary font-semibold">Components</h1>
+        <h1 className="text-primary font-semibold text-xl">Components</h1>
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
         </Link>
