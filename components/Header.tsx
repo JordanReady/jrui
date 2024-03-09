@@ -7,11 +7,11 @@ import { ThemeToggle } from "./ThemeToggle";
 const Header = () => {
   return (
     <Reveal
-      className=" p-4 flex center sm:justify-center items-center align-middle border-t-0 border-l-0 border-r-0 dark:border-b-slate-100 border shadow fixed w-full top-0 z-50 bg-white dark:bg-[rgb(2,8,23)] "
+      className=" p-4 flex center sm:justify-center items-center align-middle border-top-none border-right-none border-left-none border border-gradient shadow fixed w-full top-0 z-50 bg-white dark:bg-[rgb(2,8,23)] "
       direction="down"
       delay={0}
     >
-      <div className="container flex justify-center sm:justify-between">
+      <div className="container max-w-[1400px] flex justify-center sm:justify-between">
         <Link
           className="hidden sm:flex opacity-0 sm:opacity-100 text-4xl font-bold my-0"
           href={"/"}

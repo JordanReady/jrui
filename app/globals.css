@@ -116,14 +116,15 @@ pre {
   align-items: end;
 }
 .card-hover:hover {
+  transition: color 0.2s, transform 0.2s ease-in-out;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .btn-hover:hover {
-  color: transparent;
+  /* color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: linear-gradient(to bottom right, #9333ea, #3b82f6);
+  background-image: linear-gradient(to bottom right, #9333ea, #3b82f6); */
   transition: color 0.2s, transform 0.2s ease-in-out;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
