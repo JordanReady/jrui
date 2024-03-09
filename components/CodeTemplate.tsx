@@ -57,7 +57,7 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
         </button>
       </div>
       <div
-        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto `}
+        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto bg-[#272424]`}
         ref={codeRef}
         style={{ maxHeight: expanded ? "none" : "420px", overflow: "hidden" }}
       >
