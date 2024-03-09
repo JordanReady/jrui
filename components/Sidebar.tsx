@@ -53,12 +53,12 @@ const Sidebar = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-0 left-0  mt-[76px] z-[999] p-[.35rem] `}
+        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-0 left-0  mt-[76px] z-[999] p-[.35rem] mb-4 pb-4 `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>
       <div
-        className={`bg-white dark:bg-[rgb(2,8,23)] p-2 flex flex-col mt-[77px] ${
+        className={`bg-white dark:bg-[rgb(2,8,23)] p-2 flex flex-col mt-[77px] overflow-y-scroll no-scroll ${
           isSidebarOpen
             ? "hidden md:inline-flex "
             : " w-[225px] border-2 z-[998] border-gradient border-t-0 border-l-0 md:flex-block md:border-none md:shadow-none left-[8px] md:left-20"
@@ -129,121 +129,15 @@ const Sidebar = () => {
         <Link className={getLinkClassName("dark-mode")} href="/docs/dark-mode">
           Dark Mode
         </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
+
         <h1 className="text-primary font-semibold text-xl">Sections</h1>
         <Link className={getLinkClassName("hero")} href="/docs/hero">
           Hero
         </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
+
         <h1 className="text-primary font-semibold text-xl">Components</h1>
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
-        </Link>
-        <Link className={getLinkClassName("test")} href="/docs/test">
-          Test
         </Link>
       </div>
     </>
