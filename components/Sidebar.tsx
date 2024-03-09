@@ -53,7 +53,7 @@ const Sidebar = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-0 left-0  mt-[76px] z-[999] p-[.35rem] mb-4 pb-4 `}
+        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-0 left-0  mt-[76px] z-[999] p-[.35rem]  `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>
@@ -64,7 +64,7 @@ const Sidebar = () => {
             : " w-[225px] border-2 z-[998] border-gradient border-t-0 border-l-0 md:flex-block md:border-none md:shadow-none left-[8px] md:left-20"
         }`}
       >
-        <h1 className="text-primary font-semibold text-xl lg:mt-0">
+        <h1 className="text-primary font-semibold text-xl mt-8">
           Getting Started
         </h1>
         <Link
