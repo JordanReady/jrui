@@ -55,18 +55,18 @@ const Sidebar = () => {
       {/* Button to toggle the sidebar on mobile */}
       <button
         onClick={toggleSidebar}
-        className={`md:hidden ml-2 z-[999] p-[.35rem] border-2 border-gradient fixed top-[4.75rem] left-[-.5rem]  bg-white dark:bg-[rgb(2,8,23)] `}
+        className={`lg:hidden ml-2 z-[999] p-[.35rem] border-2 border-gradient fixed top-[4.75rem] left-[-.5rem]  bg-white dark:bg-[rgb(2,8,23)] `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>
       <div
-        className={`w-[200px] min-w-[200px] max-w-[200px] md:w-1/6 p-2 flex flex-col mt-[-.9rem] md:mt-[1.5rem] ml-[-.5rem] ${
+        className={`w-[200px] min-w-[200px] max-w-[200px] lg:w-1/6 p-2 flex flex-col mt-[-.9rem] lg:mt-[1.5rem] ml-[-.5rem] ${
           isSidebarOpen
-            ? "hidden md:inline-flex "
-            : "fixed bg-white dark:bg-[rgb(2,8,23)] border-2  z-[998] border-gradient border-t-0 border-l-0 md:flex-block md:border-none md:shadow-none "
+            ? "hidden lg:inline-flex "
+            : "fixed bg-white dark:bg-[rgb(2,8,23)] border-2  z-[998] border-gradient border-t-0 border-l-0 lg:flex-block lg:border-none lg:shadow-none left-[8px] lg:left-8"
         }`}
       >
-        <h1 className="text-primary font-semibold text-xl mt-8 md:mt-0">
+        <h1 className="text-primary font-semibold text-xl mt-8 lg:mt-0">
           Getting Started
         </h1>
         <Link

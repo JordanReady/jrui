@@ -11,7 +11,7 @@ const Header = () => {
       direction="down"
       delay={0}
     >
-      <div className="container flex justify-center md:justify-between">
+      <div className="container flex justify-center sm:justify-between">
         <Link
           className="hidden sm:flex opacity-0 sm:opacity-100 text-4xl font-bold my-0"
           href={"/"}

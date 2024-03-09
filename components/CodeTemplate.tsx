@@ -43,14 +43,16 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
   };
 
   return (
-    <div className={`max-w-[710px] overflow-x-scroll `}>
+    <div
+      className={` no-scroll m-0  flex flex-col content-start md:max-w-[710px] overflow-x-scroll`}
+    >
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
-        <h2>{fileName}</h2>
+        <h2 className="p-2">{fileName}</h2>
         <button
           ref={copyButtonRef}
-          className="copy-button flex content-around p-2 w-[135px]"
+          className="copy-button flex content-around p-2 pr-0 w-[140px]"
         >
           <ClipboardPlus />
           <span className="" /> Copy Code

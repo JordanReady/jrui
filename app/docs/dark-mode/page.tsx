@@ -52,9 +52,11 @@ const DarkModeSetup = () => {
                   Create a new file called `theme-provider.tsx` in the
                   `components` directory:
                 </p>
-                <CodeTemplate
-                  fileName="components/theme-provider.tsx"
-                  code={`"use client";
+              </li>
+            </ol>
+            <CodeTemplate
+              fileName="components/theme-provider.tsx"
+              code={`"use client";
 
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -63,9 +65,7 @@ import { type ThemeProviderProps } from "next-themes/dist/types";
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }`}
-                />
-              </li>
-            </ol>
+            />
           </section>
         </Reveal>
         <Reveal>
