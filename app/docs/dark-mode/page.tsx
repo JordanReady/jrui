@@ -3,6 +3,7 @@ import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
 import CodeTemplate from "@/components/CodeTemplate";
 import DemoTemplate from "@/components/DemoTemplate";
+import DemoPreview from "@/components/demos/DemoPreview";
 
 const DarkModeSetup = () => {
   return (
@@ -20,9 +21,13 @@ const DarkModeSetup = () => {
             </h3>
             <p>
               In this guide, we'll learn how to set up dark mode functionality
-              in your application using the `next-themes` library.
+              in your application using the `next-themes` library and some help
+              from Shadcn.
             </p>
           </section>
+        </Reveal>
+        <Reveal>
+          <DemoPreview src="/Dark_Mode_Demo.mp4" />
         </Reveal>
         <Reveal>
           <section className="mb-8">
