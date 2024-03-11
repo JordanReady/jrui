@@ -2,8 +2,8 @@
 import Reveal from "@/components/Reveal";
 import React from "react";
 import Image from "next/image";
-import Sun from "@/imgs/sun.png";
-import Moon from "@/imgs/moon.png";
+import Sun from "@/imgs/Sun.png";
+import Moon from "@/imgs/Moon.png";
 import { useTheme } from "next-themes";
 
 const Demo = () => {
