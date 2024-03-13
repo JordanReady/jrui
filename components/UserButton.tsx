@@ -43,22 +43,25 @@ const UserButton = () => {
       </button>
 
       {session && showDropdown && (
-        <div className="w-[169px] absolute top-10 mt-5 right-0 border-gradient border-2">
+        <div className="w-[169px] absolute top-10 mt-5 right-0 border-gradient border-2 bg-white dark:bg-[#020617]">
           <Link
             href="/request"
             onClick={() => setShowDropdown(false)}
-            className=" btn-hover block px-4 py-2"
+            className="w-full text-center btn-hover block px-4 py-2"
           >
             Request UI
           </Link>
           <Link
             href="/request"
             onClick={() => setShowDropdown(false)}
-            className=" btn-hover block px-4 py-2"
+            className=" w-full text-center btn-hover block px-4 py-2"
           >
             Support Me
           </Link>
-          <button onClick={handleLogout} className=" btn-hover block px-4 py-2">
+          <button
+            onClick={handleLogout}
+            className=" w-full text-center btn-hover block px-4 py-2"
+          >
             Logout
           </button>
         </div>

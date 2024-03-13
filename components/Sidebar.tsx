@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { CornerDownRight, Menu, X } from "lucide-react";
+import SidebarControls from "./SidebarControls";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -53,16 +54,16 @@ const Sidebar = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-[77px] border-top-none left-0 z-[999] p-[.35rem]  `}
+        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-[77px] border-top-none left-0 z-[999] p-[.5rem] `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>
 
       <div
-        className={`bg-white dark:bg-[rgb(2,8,23)] p-2 flex flex-col  overflow-y-scroll no-scroll ${
+        className={`bg-white dark:bg-[rgb(2,8,23)] p-2 flex flex-col  overflow-y-scroll no-scroll relative w-min min-w-[230px] md:w-full ${
           isSidebarOpen
             ? "hidden md:inline-flex "
-            : " w-[225px] border-2 z-[998] border-gradient border-top-none border-l-0 md:flex-block md:border-none md:shadow-none left-[8px] md:left-20"
+            : " border-2 z-[998] border-gradient border-top-none border-l-0 md:flex-block md:border-none md:shadow-none  md:left-20"
         }`}
       >
         <h1 className="text-primary font-semibold text-xl mt-8 md:mt-7">
@@ -140,6 +141,8 @@ const Sidebar = () => {
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
         </Link>
+
+        <SidebarControls />
       </div>
     </>
   );
