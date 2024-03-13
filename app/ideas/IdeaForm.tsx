@@ -41,7 +41,7 @@ const IdeaForm = () => {
             </h1>
             <div className="mb-4">
               <label htmlFor="ideaName" className="block  font-medium ">
-                What do you have an idea about?
+                What is your idea about?
               </label>
               <input
                 type="text"
