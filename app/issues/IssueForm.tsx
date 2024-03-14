@@ -12,6 +12,7 @@ const IssueForm: React.FC = () => {
   const [issueName, setIssueName] = useState<string>("");
   const [issueDescription, setIssueDescription] = useState<string>("");
   const { data: session } = useSession();
+  const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const IssueForm: React.FC = () => {
       setIssueName("");
       setIssueDescription("");
       customEvent("Issue Submitted", "Issue Submitted");
+      setSubmitted(true);
     } catch (error) {
       // Handle error if submission fails
       console.error("Failed to submit issue:", error);
@@ -48,50 +50,65 @@ const IssueForm: React.FC = () => {
         </Reveal>
         <Reveal>
           {session ? (
-            <form
-              className="md:w-[512px] mx-auto p-4 md:pr-14 "
-              onSubmit={handleSubmit}
-            >
-              <h1 className="text-primary mb-4 text-3xl font-semibold">
-                Let's fix this issue!
-              </h1>
-              <div className="mb-4">
-                <label htmlFor="issueName" className="block font-medium">
-                  What are you experiencing issues with?
-                </label>
-                <input
-                  type="text"
-                  id="issueName"
-                  value={issueName}
-                  onChange={(e) => setIssueName(e.target.value)}
-                  required
-                  className="mt-1 p-2 w-full border "
-                  placeholder="Component, Section, Feature, Template"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label htmlFor="issueDescription" className="block font-medium">
-                  Give me a detailed description:
-                </label>
-                <textarea
-                  id="issueDescription"
-                  value={issueDescription}
-                  onChange={(e) => setIssueDescription(e.target.value)}
-                  required
-                  className="mt-1 p-2 w-full border "
-                  rows={4}
-                  placeholder="Fix it yourself, you know what's wrong."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-4 py-2 border border-gradient btn-hover"
+            submitted ? (
+              <Reveal className="md:w-[512px] mx-auto p-4 md:pr-14 ">
+                <h1 className="text-primary mb-4 text-3xl font-semibold">
+                  Thank you!
+                </h1>
+                <p>
+                  Your issue has been submitted. I will look into it as soon as
+                  possible.
+                </p>
+              </Reveal>
+            ) : (
+              <form
+                className="md:w-[512px] mx-auto p-4 md:pr-14 "
+                onSubmit={handleSubmit}
               >
-                Submit Issue
-              </button>
-            </form>
+                <h1 className="text-primary mb-4 text-3xl font-semibold">
+                  Let's fix this issue!
+                </h1>
+                <div className="mb-4">
+                  <label htmlFor="issueName" className="block font-medium">
+                    What are you experiencing issues with?
+                  </label>
+                  <input
+                    type="text"
+                    id="issueName"
+                    value={issueName}
+                    onChange={(e) => setIssueName(e.target.value)}
+                    required
+                    className="mt-1 p-2 w-full border "
+                    placeholder="Component, Section, Feature, Template"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="issueDescription"
+                    className="block font-medium"
+                  >
+                    Give me a detailed description:
+                  </label>
+                  <textarea
+                    id="issueDescription"
+                    value={issueDescription}
+                    onChange={(e) => setIssueDescription(e.target.value)}
+                    required
+                    className="mt-1 p-2 w-full border "
+                    rows={4}
+                    placeholder="Fix it yourself, you know what's wrong."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 border border-gradient btn-hover"
+                >
+                  Submit Issue
+                </button>
+              </form>
+            )
           ) : (
             <Reveal className="flex flex-col h-full center items-center justify-center">
               <p className="text-center text-primary text-2xl font-semibold">

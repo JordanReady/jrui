@@ -12,6 +12,7 @@ const IdeaForm = () => {
   const [ideaName, setIdeaName] = useState<string>("");
   const [ideaDescription, setIdeaDescription] = useState<string>("");
   const { data: session } = useSession();
+  const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const IdeaForm = () => {
       setIdeaName("");
       setIdeaDescription("");
       customEvent("Idea Submitted", "Idea Submitted");
+      setSubmitted(true);
     } catch (error) {
       // Handle error if submission fails
       console.error("Failed to submit idea:", error);
@@ -48,50 +50,65 @@ const IdeaForm = () => {
         </Reveal>
         <Reveal>
           {session ? (
-            <form
-              className="md:w-[512px] mx-auto p-4 md:pr-14 "
-              onSubmit={handleSubmit}
-            >
-              <h1 className="text-primary mb-4 text-3xl font-semibold">
-                Share your Ideas!
-              </h1>
-              <div className="mb-4">
-                <label htmlFor="ideaName" className="block font-medium">
-                  What is your idea about?
-                </label>
-                <input
-                  type="text"
-                  id="ideaName"
-                  value={ideaName}
-                  onChange={(e) => setIdeaName(e.target.value)}
-                  required
-                  className="mt-1 p-2 w-full border "
-                  placeholder="Component, Section, Feature, Template"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label htmlFor="ideaDescription" className="block font-medium">
-                  Give me a detailed description:
-                </label>
-                <textarea
-                  id="ideaDescription"
-                  value={ideaDescription}
-                  onChange={(e) => setIdeaDescription(e.target.value)}
-                  required
-                  className="mt-1 p-2 w-full border "
-                  rows={4}
-                  placeholder="Let's hear this amazing idea!"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-4 py-2 border border-gradient btn-hover"
+            submitted ? (
+              <Reveal className="md:w-[512px] mx-auto p-4 md:pr-14 ">
+                <h1 className="text-primary mb-4 text-3xl font-semibold">
+                  Thank you!
+                </h1>
+                <p>
+                  Your issue has been submitted. I will look into it as soon as
+                  possible.
+                </p>
+              </Reveal>
+            ) : (
+              <form
+                className="md:w-[512px] mx-auto p-4 md:pr-14 "
+                onSubmit={handleSubmit}
               >
-                Submit Idea
-              </button>
-            </form>
+                <h1 className="text-primary mb-4 text-3xl font-semibold">
+                  Share your Ideas!
+                </h1>
+                <div className="mb-4">
+                  <label htmlFor="ideaName" className="block font-medium">
+                    What is your idea about?
+                  </label>
+                  <input
+                    type="text"
+                    id="ideaName"
+                    value={ideaName}
+                    onChange={(e) => setIdeaName(e.target.value)}
+                    required
+                    className="mt-1 p-2 w-full border "
+                    placeholder="Component, Section, Feature, Template"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="ideaDescription"
+                    className="block font-medium"
+                  >
+                    Give me a detailed description:
+                  </label>
+                  <textarea
+                    id="ideaDescription"
+                    value={ideaDescription}
+                    onChange={(e) => setIdeaDescription(e.target.value)}
+                    required
+                    className="mt-1 p-2 w-full border "
+                    rows={4}
+                    placeholder="Let's hear this amazing idea!"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 border border-gradient btn-hover"
+                >
+                  Submit Idea
+                </button>
+              </form>
+            )
           ) : (
             <Reveal className="flex flex-col h-full center items-center justify-center">
               <p className="text-center text-primary text-2xl font-semibold">
