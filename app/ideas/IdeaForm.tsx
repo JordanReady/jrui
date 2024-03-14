@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import { submitIdea } from "@/utils/firebaseUtils";
 import { db } from "@/firebase";
 import { signIn, useSession } from "next-auth/react";
+import { customEvent } from "@/utils/CustomEvent";
 
 const IdeaForm = () => {
   const [ideaName, setIdeaName] = useState<string>("");
@@ -21,6 +22,7 @@ const IdeaForm = () => {
       // Reset the form fields after successful submission
       setIdeaName("");
       setIdeaDescription("");
+      customEvent("Idea Submitted", "Idea Submitted");
     } catch (error) {
       // Handle error if submission fails
       console.error("Failed to submit idea:", error);

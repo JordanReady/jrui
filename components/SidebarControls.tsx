@@ -12,7 +12,7 @@ const SidebarControls = () => {
         tip="Have an issue with something? Let me know and I'll take a look!"
       >
         <Link href={"/issues"}>
-          <ShieldAlert />
+          <ShieldAlert color="#9844fb" />
         </Link>
       </Tooltip>
       <Tooltip
@@ -21,7 +21,7 @@ const SidebarControls = () => {
         tip="Have something in mind? Let me know what you want to see!"
       >
         <Link href={"/ideas"}>
-          <Lightbulb />
+          <Lightbulb color="#9844fb" />
         </Link>
       </Tooltip>
     </div>

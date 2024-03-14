@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import { submitIssue } from "@/utils/firebaseUtils";
 import { db } from "@/firebase";
 import { signIn, useSession } from "next-auth/react";
+import { customEvent } from "@/utils/CustomEvent";
 
 const IssueForm: React.FC = () => {
   const [issueName, setIssueName] = useState<string>("");
@@ -21,6 +22,7 @@ const IssueForm: React.FC = () => {
       // Reset the form fields after successful submission
       setIssueName("");
       setIssueDescription("");
+      customEvent("Issue Submitted", "Issue Submitted");
     } catch (error) {
       // Handle error if submission fails
       console.error("Failed to submit issue:", error);
