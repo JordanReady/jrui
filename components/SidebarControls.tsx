@@ -11,8 +11,19 @@ const SidebarControls = () => {
         left="-61px"
         tip="Have an issue with something? Let me know and I'll take a look!"
       >
-        <Link href={"/issues"}>
-          <ShieldAlert color="#9844fb" />
+        <Link className="opacity-70 dark:opacity-90" href={"/issues"}>
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient
+                id="shieldGradient"
+                gradientTransform="rotate(90)"
+              >
+                <stop offset="0%" style={{ stopColor: "#9333ea" }} />
+                <stop offset="100%" style={{ stopColor: "#3b82f6" }} />
+              </linearGradient>
+            </defs>
+            <ShieldAlert fill="url(#shieldGradient)" />
+          </svg>
         </Link>
       </Tooltip>
       <Tooltip
@@ -20,8 +31,19 @@ const SidebarControls = () => {
         left="-89px"
         tip="Have something in mind? Let me know what you want to see!"
       >
-        <Link href={"/ideas"}>
-          <Lightbulb color="#9844fb" />
+        <Link className="opacity-70 dark:opacity-90" href={"/ideas"}>
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient
+                id="lightbulbGradient"
+                gradientTransform="rotate(90)"
+              >
+                <stop offset="0%" style={{ stopColor: "#9333ea" }} />
+                <stop offset="100%" style={{ stopColor: "#3b82f6" }} />
+              </linearGradient>
+            </defs>
+            <Lightbulb fill="url(#lightbulbGradient)" />
+          </svg>
         </Link>
       </Tooltip>
     </div>
