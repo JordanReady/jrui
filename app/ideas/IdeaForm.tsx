@@ -56,7 +56,7 @@ const IdeaForm = () => {
                   Thank you!
                 </h1>
                 <p>
-                  Your issue has been submitted. I will look into it as soon as
+                  Your idea has been submitted. I will look into it as soon as
                   possible.
                 </p>
               </Reveal>
