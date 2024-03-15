@@ -27,7 +27,7 @@ const DocLayout: React.FC<DefaultLayoutProps> = ({ children, animate }) => {
       )}
 
       <Reveal className="relative" delay={0.35}>
-        <section>
+        <section className="mt-2">
           {children}
           <Reveal className="mb-8" delay={0.5}>
             <DocNav />
