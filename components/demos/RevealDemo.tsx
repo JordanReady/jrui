@@ -45,7 +45,7 @@ const RevealDemo = () => {
             <Image
               height={200}
               width={200}
-              alt="JRui the mascot!"
+              alt="Scooty the mascot!"
               src={Scooty}
               className="my-2"
             ></Image>
@@ -61,7 +61,7 @@ const RevealDemo = () => {
         <div className="h-[380px] w-[210px] dark:bg-slate-900 bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
           <Reveal duration={1.5} direction="right" delay={3.2}>
             <h1 className="  text-4xl font-bold my-2">
-              BO
+              TO
               <span className="bg-black text-primary">oty</span>
             </h1>
           </Reveal>
@@ -69,14 +69,14 @@ const RevealDemo = () => {
             <Image
               height={200}
               width={200}
-              alt="JRui the mascot!"
+              alt="Tooty the mascot!"
               src={Booty}
               className="my-2"
             ></Image>
           </Reveal>
           <Reveal duration={2} direction="right" delay={3.6}>
             <p className=" font-semibold text-center my-2 ">
-              Say hello to Booty! He's Jrui's step-bro!
+              Say hello to Tooty! He's Jrui's step-bro!
             </p>
           </Reveal>
         </div>

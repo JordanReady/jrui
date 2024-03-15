@@ -49,7 +49,7 @@ function CodeTemplate({ code, fileName }: CodeTemplateProps): JSX.Element {
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
-        <h2 className="p-2">{fileName}</h2>
+        <h2 className="py-2 px-4">{fileName}</h2>
         <button
           ref={copyButtonRef}
           className="copy-button flex content-around p-2 pr-0 w-[140px]"

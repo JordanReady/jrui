@@ -141,6 +141,9 @@ const Sidebar = () => {
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
         </Link>
+        <Link className={getLinkClassName("tooltip")} href="/docs/tooltip">
+          Tooltip
+        </Link>
 
         <SidebarControls />
       </div>

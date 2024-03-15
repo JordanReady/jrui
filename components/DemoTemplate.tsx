@@ -38,14 +38,14 @@ function DemoTemplate({
   }, [clipboardInitialized, code]);
 
   return (
-    <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll `}>
+    <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll no-scroll`}>
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
-        <h2>{title}</h2>
+        <h2 className="py-2 px-4">{title}</h2>
         <button ref={copyButtonRef} className="copy-button flex p-2 w-[130px]">
-          <ClipboardPlus />
-          <span className="w-1" /> Copy Code
+          <ClipboardPlus className="mr-1" />
+          Copy Code
         </button>
       </div>
       <div
