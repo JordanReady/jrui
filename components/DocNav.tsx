@@ -63,7 +63,6 @@ const DocNav: React.FC = () => {
         setPrevTitle("Adding Components");
         setPrevUrl("/docs/adding-components");
         break;
-
       case "/docs/next-oauth-firebase/docs":
         setUrl("/docs/dark-mode");
         setTitle("Dark Mode");
@@ -83,10 +82,17 @@ const DocNav: React.FC = () => {
         setPrevUrl("/docs/dark-mode");
         break;
       case "/docs/reveal":
-        setUrl("/getting-started");
-        setTitle("Getting Started");
+        setUrl("/docs/tooltip");
+        setTitle("Tool Tip");
         setPrevTitle("Hero");
         setPrevUrl("/docs/hero");
+        break;
+      case "/docs/tooltip":
+        setUrl("/docs");
+        setTitle("Getting Started");
+        setPrevTitle("Reveal");
+        setPrevUrl("/docs/reveal");
+        break;
     }
   }, [urlInput]);
 
