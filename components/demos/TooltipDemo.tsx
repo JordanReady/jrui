@@ -96,7 +96,7 @@ const RevealDemo = () => {
         </div>
       </Reveal>
       <Reveal>
-        <div className="h-[380px] w-[210px] gap-8 flex flex-col justify-center items-center ">
+        <div className=" w-[210px] gap-8 flex flex-col justify-center items-center ">
           <Tooltip
             className="mt-[-40px]"
             offset={7}

@@ -38,7 +38,7 @@ function DemoTemplate({
   }, [clipboardInitialized, code]);
 
   return (
-    <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll no-scroll`}>
+    <div className={`w-[800px] max-w-[91dvw] overflow-x-scroll no-scroll mt-8`}>
       <div
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
@@ -49,7 +49,7 @@ function DemoTemplate({
         </button>
       </div>
       <div
-        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto`}
+        className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto sticky`}
         ref={codeRef}
       >
         {children}
