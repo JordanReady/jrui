@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const SidebarControls = () => {
   return (
-    <div className="flex gap-1 absolute right-0">
+    <div className="flex gap-1 absolute right-0 md:left-[6px]">
       <Tooltip
         width={220}
-        left="-61px"
+        left="111px"
         tip="Have an issue with something? Let me know and I'll take a look!"
       >
         <Link className="opacity-70 dark:opacity-90" href={"/issues"}>
@@ -28,7 +28,7 @@ const SidebarControls = () => {
       </Tooltip>
       <Tooltip
         width={220}
-        left="-89px"
+        left="83px"
         tip="Have something in mind? Let me know what you want to see!"
       >
         <Link className="opacity-70 dark:opacity-90" href={"/ideas"}>

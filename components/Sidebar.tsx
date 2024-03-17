@@ -54,7 +54,7 @@ const Sidebar = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-[77px] border-top-none left-0 z-[999] p-[.5rem] `}
+        className={`fixed md:hidden border border-gradient bg-white dark:bg-[rgb(2,8,23)] top-[77px] border-top-none left-0 z-[999] p-[.35rem] `}
       >
         {isSidebarOpen ? <Menu /> : <X />}
       </button>

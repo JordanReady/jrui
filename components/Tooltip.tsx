@@ -29,7 +29,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       {isHovered && (
         <Reveal className="mt-1" direction="up" duration={0.2}>
           <div
-            className={` ${style} absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999]`}
+            className={` ${style} hidden md:block absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999]`}
             style={{ width: width, left: left }}
           >
             <p className="p-1 text-[14px] text-center m-0">{tip}</p>
