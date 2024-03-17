@@ -99,6 +99,11 @@ li {
 }
 pre {
   max-width: 90% !important;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+pre::-webkit-scrollbar {
+  display: none;
 }
 .center {
   display: flex;
