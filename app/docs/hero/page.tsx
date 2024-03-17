@@ -184,6 +184,32 @@ export default Hero;
             />
           </section>
         </Reveal>
+        <Reveal>
+          <section className="mb-8">
+            <h3 className="text-primary text-2xl font-semibold mb-4">
+              Example Use Case
+            </h3>
+            <CodeTemplate
+              fileName="app > Example.tsx"
+              code={`import React from "react";
+import Reveal from "./Reveal"; // Adjust the import path as needed
+import Hero from "./sections/Hero"; // Adjust the import path as needed
+
+const Example: React.FC = () => {
+  return (
+    <div>
+      <Hero />
+      // other page content
+    </div>
+  );
+};
+
+export default Example;
+              
+`}
+            />
+          </section>
+        </Reveal>
       </div>
     </DocLayout>
   );
