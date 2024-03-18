@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
     };
 
     fetchIncompleteData();
-  }, [db]);
+  }, []);
 
   const handleIdeaComplete = async (ideaId: string) => {
     try {
