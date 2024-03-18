@@ -109,11 +109,8 @@ const Dashboard: React.FC = () => {
             </h2>
             <ul>
               {ideas.map((idea, index) => (
-                <Reveal delay={0.3 * index}>
-                  <li
-                    key={index}
-                    className="border-gradient px-2 pt-2 relative"
-                  >
+                <Reveal key={index} delay={0.3 * index}>
+                  <li className="border-gradient px-2 pt-2 relative">
                     <h3 className=" text-primary text-2xl font-semibold mb-1">
                       {idea.name}
                     </h3>
