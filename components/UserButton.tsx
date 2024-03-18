@@ -27,7 +27,7 @@ const UserButton = () => {
     <div className="relative">
       <button
         onClick={handleButtonClick}
-        className={`px-4 py-2   border btn-hover border-gradient ${
+        className={`px-4 py-2 border btn-hover border-gradient ${
           session ? "signed-in" : ""
         }`}
       >
@@ -47,20 +47,22 @@ const UserButton = () => {
           <Link
             href="/ideas"
             onClick={() => setShowDropdown(false)}
-            className="w-full text-center btn-hover block px-4 py-2"
+            className="w-full text-center block px-4 py-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 duration-100"
           >
             Request UI
           </Link>
-          {/* <Link
-            href="/request"
-            onClick={() => setShowDropdown(false)}
-            className=" w-full text-center btn-hover block px-4 py-2"
-          >
-            Support Me
-          </Link> */}
+          {session && session.user?.id === "PqMnl7Wc32CVIzhMAic8" && (
+            <Link
+              href="/admin"
+              onClick={() => setShowDropdown(false)}
+              className="w-full text-center block px-4 py-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 duration-100"
+            >
+              Admin
+            </Link>
+          )}
           <button
             onClick={handleLogout}
-            className=" w-full text-center btn-hover block px-4 py-2"
+            className="w-full text-center block px-4 py-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-red-700 hover:to-red-500 duration-100"
           >
             Logout
           </button>

@@ -37,7 +37,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <SessionProvider session={session}>
-      <html lang="en">
+      <html suppressHydrationWarning={true} lang="en">
         <body className={inter.className}>
           <FirebaseAuthProvider>
             <ThemeProvider

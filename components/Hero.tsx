@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
 
       <Reveal className="w-full sm:w-[50%]  sm:mt-[85px]  center max-w-[469px] ">
-        <Image src={Jrui} alt="It's JRui the Mascot!!" />
+        <Image src={Jrui} alt="It's JRui the Mascot!!" priority={true} />
       </Reveal>
     </div>
   );
