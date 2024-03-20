@@ -5,6 +5,7 @@ import CodeTemplate from "@/components/CodeTemplate";
 import SectionTemplate from "@/components/SectionTemplate";
 import Desktop from "@/imgs/HeroDesktop.png";
 import Mobile from "@/imgs/HeroMobile.png";
+import CLI from "@/components/CLI";
 
 const Hero = () => {
   return (
@@ -37,6 +38,9 @@ const Hero = () => {
         </Reveal>
         <Reveal>
           <SectionTemplate desktopImg={Desktop} mobileImg={[Mobile]} />
+        </Reveal>
+        <Reveal className="mb-4">
+          <CLI command={"jrui add hero reveal"} />
         </Reveal>
         <Reveal>
           <section className="mb-8">
@@ -123,7 +127,7 @@ export default Reveal;
               `Reveal` component.
             </p>
             <CodeTemplate
-              fileName="components > sections > Hero.tsx"
+              fileName="components > Hero.tsx"
               code={`import React from "react";
 import Reveal from "../components/Reveal";
 import HeroImg from "@/imgs/JRuiLogo.png";

@@ -5,6 +5,7 @@ import CodeTemplate from "@/components/CodeTemplate";
 import DemoTemplate from "@/components/DemoTemplate";
 import TooltipDemo from "@/components/demos/TooltipDemo";
 import TooltipDemo2 from "@/components/demos/TooltipDemo2";
+import CLI from "@/components/CLI";
 
 const RevealComponent = () => {
   return (
@@ -41,6 +42,9 @@ const RevealComponent = () => {
               </DemoTemplate>
             </Reveal>
           </section>
+        </Reveal>
+        <Reveal className="mb-6">
+          <CLI command={"jrui add tooltip reveal"} />
         </Reveal>
         <Reveal>
           <section className="mb-8">

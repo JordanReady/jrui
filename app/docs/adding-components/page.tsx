@@ -34,13 +34,14 @@ const AddingComponents = () => {
               Component Placement
             </h2>
             <p>
-              All JRui components are designed to be added to the{" "}
-              <code>components</code> folder in your project. This ensures a
-              clean and organized structure.
+              All JRui components are designed to be added to the `components`
+              folder in your project. This ensures a clean and organized
+              structure.
             </p>
             <p>
-              Simply locate the component you want to use, copy the code, and
-              paste it into the <code>components</code> folder in your project.
+              Simply locate the component you want to import into your project,
+              use the CLI to install the component, or copy the code and paste
+              it into the `components` folder in your project.
             </p>
           </section>
         </Reveal>

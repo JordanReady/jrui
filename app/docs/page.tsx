@@ -56,8 +56,19 @@ const GettingStarted = () => {
             <h3 className="text-primary text-xl mb-2">Easy Integration</h3>
             <p>
               Getting started with JRui is simple. Choose a template, pick the
-              components you need, copy and paste the code into your project –
-              it's that easy!
+              components you need, use the cli or copy and paste the code into
+              your project – it's that easy!
+            </p>
+          </div>
+
+          {/* Command Line Interface  */}
+          <div className="mb-4">
+            <h3 className="text-primary text-xl mb-2">
+              Command Line Interface {`(CLI)`}
+            </h3>
+            <p>
+              Use the CLI to quickly and easily install components and sections
+              into your project.
             </p>
           </div>
         </section>
@@ -74,7 +85,24 @@ const GettingStarted = () => {
               Explore the component library and pick the components you need.
             </li>
             <li>
-              Copy and paste the provided code snippets into your project.
+              Install the CLI into your project. <br />
+              <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-scroll ">
+                npm i jrui-cli
+              </pre>
+              <li>
+                Then run the setup command to setup your globals.css file with
+                pre defined custom styles. <br />
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-scroll ">
+                  jrui setup
+                </pre>
+              </li>
+              <li>
+                Then install the components you would like to use with the add
+                command. <br />
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-scroll ">
+                  jrui add {`[components]`}
+                </pre>
+              </li>
             </li>
             <li>
               Customize the code according to your project specifications.

@@ -34,17 +34,11 @@ const AddingSections = () => {
               Section Placement
             </h2>
             <p>
-              All JRui sections are organized within the{" "}
-              <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
-                {`components`}
-              </pre>{" "}
-              or{" "}
-              <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
-                {`components ${`>`} sections`}
-              </pre>{" "}
-              folder in your project. To integrate a section, navigate to the
-              desired section, copy the code, and paste it into the selected
-              folder in your project.
+              All JRui sections are organized within the `components` folder in
+              your project. To integrate a section into your project, use the
+              CLI to easily import the section into your project, or navigate to
+              the desired directory you want the section to be, copy the code,
+              and paste it into the selected folder in your project.
             </p>
           </section>
         </Reveal>

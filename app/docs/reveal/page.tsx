@@ -5,6 +5,7 @@ import CodeTemplate from "@/components/CodeTemplate";
 import DemoTemplate from "@/components/DemoTemplate";
 import RevealDemo from "@/components/demos/RevealDemo";
 import RevealDemo2 from "@/components/demos/RevealDemo2";
+import CLI from "@/components/CLI";
 
 const RevealComponent = () => {
   return (
@@ -110,6 +111,9 @@ const RevealComponent = () => {
             >
               <RevealDemo />
             </DemoTemplate>
+            <Reveal className="mt-6">
+              <CLI command={"jrui add reveal"} />
+            </Reveal>
           </section>
         </Reveal>
         <Reveal>

@@ -1,4 +1,4 @@
-import { Lightbulb, ShieldAlert } from "lucide-react";
+import { Lightbulb, ShieldAlert, Bug } from "lucide-react";
 import React from "react";
 import Tooltip from "./Tooltip";
 import Link from "next/link";
@@ -14,15 +14,12 @@ const SidebarControls = () => {
         <Link className="opacity-70 dark:opacity-90" href={"/issues"}>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <defs>
-              <linearGradient
-                id="shieldGradient"
-                gradientTransform="rotate(90)"
-              >
+              <linearGradient id="bugGradient" gradientTransform="rotate(90)">
                 <stop offset="0%" style={{ stopColor: "#9333ea" }} />
                 <stop offset="100%" style={{ stopColor: "#3b82f6" }} />
               </linearGradient>
             </defs>
-            <ShieldAlert fill="url(#shieldGradient)" />
+            <Bug fill="url(#bugGradient)" />
           </svg>
         </Link>
       </Tooltip>
