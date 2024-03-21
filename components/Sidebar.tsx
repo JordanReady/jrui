@@ -144,6 +144,12 @@ const Sidebar = () => {
         <Link className={getLinkClassName("tooltip")} href="/docs/tooltip">
           Tooltip
         </Link>
+        <Link
+          className={getLinkClassName("user-avatar")}
+          href="/docs/user-avatar"
+        >
+          User Avatar
+        </Link>
 
         <SidebarControls />
       </div>

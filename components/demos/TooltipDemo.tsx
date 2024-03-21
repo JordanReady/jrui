@@ -1,8 +1,6 @@
 import React from "react";
 import Reveal from "../Reveal";
 import Jrui from "@/imgs/JRuiLogo.png";
-import Scooty from "@/imgs/ScootyLogo.png";
-import Booty from "@/imgs/BootyLogo.png";
 import Image from "next/image";
 import { Croissant, Settings } from "lucide-react";
 import Tooltip from "@/app/demo/components/Tooltip";

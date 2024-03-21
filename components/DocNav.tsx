@@ -83,15 +83,21 @@ const DocNav: React.FC = () => {
         break;
       case "/docs/reveal":
         setUrl("/docs/tooltip");
-        setTitle("Tool Tip");
+        setTitle("Tooltip");
         setPrevTitle("Hero");
         setPrevUrl("/docs/hero");
         break;
       case "/docs/tooltip":
-        setUrl("/docs");
-        setTitle("Getting Started");
+        setUrl("/docs/user-avatar");
+        setTitle("User Avatar");
         setPrevTitle("Reveal");
         setPrevUrl("/docs/reveal");
+        break;
+      case "/docs/user-avatar":
+        setUrl("/docs");
+        setTitle("Getting Started");
+        setPrevTitle("Tooltip");
+        setPrevUrl("/docs/tooltip");
         break;
     }
   }, [urlInput]);
