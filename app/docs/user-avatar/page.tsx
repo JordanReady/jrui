@@ -18,7 +18,7 @@ const UserAvatar = () => {
     if (session) {
       setAvatarState("Next/OAuth/Firebase");
     } else {
-      setAvatarState("default");
+      setAvatarState("Default");
     }
   }, [session]);
 
@@ -132,6 +132,13 @@ const UserAvatar = () => {
               command={"jrui add userAvatarNextOAuthFirebase"}
               componentState={avatarState}
             />
+            <p className=" font-bold">
+              Note: Running this command will modify your next.config.mjs file
+              to enable the component to display Google images. If you haven't
+              customized this file for image handling, you're all set. However,
+              any existing customizations will be overwritten. Consider backing
+              up your current next.config.mjs file before proceeding.
+            </p>
           </Reveal>
         )}
         <Reveal>
