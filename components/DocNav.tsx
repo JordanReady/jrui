@@ -82,16 +82,22 @@ const DocNav: React.FC = () => {
         setPrevUrl("/docs/dark-mode");
         break;
       case "/docs/reveal":
-        setUrl("/docs/tooltip");
-        setTitle("Tooltip");
+        setUrl("/docs/theme-toggle");
+        setTitle("Theme Toggle");
         setPrevTitle("Hero");
         setPrevUrl("/docs/hero");
+        break;
+      case "/docs/theme-toggle":
+        setUrl("/docs/tooltip");
+        setTitle("Tooltip");
+        setPrevTitle("Reveal");
+        setPrevUrl("/docs/reveal");
         break;
       case "/docs/tooltip":
         setUrl("/docs/user-avatar");
         setTitle("User Avatar");
-        setPrevTitle("Reveal");
-        setPrevUrl("/docs/reveal");
+        setPrevTitle("Theme Toggle");
+        setPrevUrl("/docs/theme-toggle");
         break;
       case "/docs/user-avatar":
         setUrl("/docs");

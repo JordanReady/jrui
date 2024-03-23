@@ -141,6 +141,12 @@ const Sidebar = () => {
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
         </Link>
+        <Link
+          className={getLinkClassName("theme-toggle")}
+          href="/docs/theme-toggle"
+        >
+          Theme Toggle
+        </Link>
         <Link className={getLinkClassName("tooltip")} href="/docs/tooltip">
           Tooltip
         </Link>
