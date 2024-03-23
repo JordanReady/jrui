@@ -43,10 +43,15 @@ function DemoTemplate({
         className={` border border-gradient border-bottom-none flex justify-between items-center p-1  `}
       >
         <h2 className="py-2 px-4">{title}</h2>
-        <button ref={copyButtonRef} className="copy-button flex p-2 w-[130px]">
-          <ClipboardPlus className="mr-1" />
-          Copy Code
-        </button>
+        {code.trim() !== "" && (
+          <button
+            ref={copyButtonRef}
+            className="copy-button flex p-2 w-[130px]"
+          >
+            <ClipboardPlus className="mr-1" />
+            Copy Code
+          </button>
+        )}
       </div>
       <div
         className={`${styles.codeContainer} border-gradient border border-top-none sm:overflow-x-auto sticky`}

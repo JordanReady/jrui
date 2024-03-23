@@ -77,7 +77,44 @@ const UserAvatar = () => {
                 <Reveal>
                   <DemoTemplate
                     title="Demo"
-                    code={`
+                    code={`import React from "react";
+import Reveal from "../Reveal";
+import Jrui from "@/imgs/JRuiLogo.png";
+import UserAvatar from "@/app/demo/components/UserAvatar";
+
+const RevealDemo = () => {
+  return (
+    <div className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
+      <Reveal delay={0.5}>
+        <UserAvatar img={Jrui} size={25} className="hover:animate-ping" />
+      </Reveal>
+      <Reveal delay={0.75}>
+        <UserAvatar
+          img={Jrui}
+          size={50}
+          className=" border-4 border-[#9333ea] p-1 hover:animate-spin"
+        />
+      </Reveal>
+      <Reveal delay={1}>
+        <UserAvatar
+          img={Jrui}
+          size={75}
+          className=" hover:translate-y-[-1rem] duration-100"
+        />
+      </Reveal>
+      <Reveal delay={1.25}>
+        <UserAvatar
+          img={Jrui}
+          size={100}
+          className="border-2 border-white p-4 hover:p-2 hover:scale-125 transition-all duration-300"
+        />
+      </Reveal>
+    </div>
+  );
+};
+
+export default RevealDemo;
+
 `}
                   >
                     <UserAvatarDemo />
@@ -109,7 +146,58 @@ const UserAvatar = () => {
                 <Reveal>
                   <DemoTemplate
                     title="Demo"
-                    code={`
+                    code={`"use client";
+import React from "react";
+import Reveal from "../Reveal";
+import Jrui from "@/imgs/JRuiLogo.png";
+import UserAvatar from "@/app/demo/components/UserAvatarNextOAuthFirebase";
+import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
+
+const RevealDemo = () => {
+  const { data: session } = useSession();
+  return (
+    <>
+      {!session && (
+        <div className="flex flex-col center">
+          <h1 className="text-center">Login to view this demo!</h1>
+          <button
+            onClick={() => signIn()}
+            className="btn-hover border-gradient px-4 py-2 mt-2"
+          >
+            Login
+          </button>
+        </div>
+      )}
+      <div className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
+        <Reveal delay={0.5}>
+          <UserAvatar size={25} className="hover:animate-ping" />
+        </Reveal>
+        <Reveal delay={0.75}>
+          <UserAvatar
+            size={50}
+            className=" border-4 border-[#9333ea] p-1 hover:animate-spin"
+          />
+        </Reveal>
+        <Reveal delay={1}>
+          <UserAvatar
+            size={75}
+            className=" hover:translate-y-[-1rem] duration-100"
+          />
+        </Reveal>
+        <Reveal delay={1.25}>
+          <UserAvatar
+            size={100}
+            className="border-2 border-white p-4 hover:p-2 hover:scale-125 transition-all duration-300"
+          />
+        </Reveal>
+      </div>
+    </>
+  );
+};
+
+export default RevealDemo;
+
 `}
                   >
                     <UserAvatarNextOAuthFirebaseDemo />
@@ -179,85 +267,7 @@ const UserAvatar = () => {
               </li>
             </ul>
             <Reveal>
-              <DemoTemplate
-                title="Props Demo"
-                code={`<div className="container p-5 flex gap-16">
-<Reveal delay={1}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
-    <Reveal direction="down" delay={1.2}>
-      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
-        JR
-        <span className="bg-black text-primary">ui</span>
-      </h1>
-    </Reveal>
-    <Reveal direction="left" delay={1.4}>
-      <Image
-        height={200}
-        width={200}
-        alt="JRui the mascot!"
-        src={Jrui}
-        className="my-2"
-      ></Image>
-    </Reveal>
-    <Reveal direction="up" delay={1.6}>
-      <p className=" font-semibold text-center my-2 ">
-        Say hello to Jrui! He's the mascot of these parts!
-      </p>
-    </Reveal>
-  </div>
-</Reveal>
-
-<Reveal duration={0.25} delay={2}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
-    <Reveal direction="left" duration={0.75} delay={2.2}>
-      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
-        SC
-        <span className="bg-black text-primary">ooty</span>
-      </h1>
-    </Reveal>
-    <Reveal duration={0.15} direction="right" delay={2.4}>
-      <Image
-        height={200}
-        width={200}
-        alt="JRui the mascot!"
-        src={Scooty}
-        className="my-2"
-      ></Image>
-    </Reveal>
-    <Reveal duration={1.25} direction="left" delay={2.6}>
-      <p className=" font-semibold text-center my-2 ">
-        Say hello to Scooty! She's Jrui's step-sis!
-      </p>
-    </Reveal>
-  </div>
-</Reveal>
-<Reveal duration={1} delay={3}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
-    <Reveal duration={1.5} direction="right" delay={3.2}>
-      <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
-        BO
-        <span className="bg-black text-primary">oty</span>
-      </h1>
-    </Reveal>
-    <Reveal duration={1.8} direction="right" delay={3.4}>
-      <Image
-        height={200}
-        width={200}
-        alt="JRui the mascot!"
-        src={Booty}
-        className="my-2"
-      ></Image>
-    </Reveal>
-    <Reveal duration={2} direction="right" delay={3.6}>
-      <p className=" font-semibold text-center my-2 ">
-        Say hello to Booty! He's Jrui's step-bro!
-      </p>
-    </Reveal>
-  </div>
-</Reveal>
-</div>
-`}
-              >
+              <DemoTemplate title="Props Demo" code={""}>
                 <UserAvatarDemo2 />
               </DemoTemplate>
             </Reveal>
