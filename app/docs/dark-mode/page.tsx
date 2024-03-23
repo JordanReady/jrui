@@ -40,27 +40,34 @@ const DarkModeSetup = () => {
                   Run the following command to install the required
                   dependencies:
                 </p>
-                <p className="mb-2 font-semibold">
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw] mb-2">
+                  jrui add theme-provider
+                </pre>
+                <p className="mb-2 font-bold">
                   Note: This will override any custom styles you have in your
                   globals.css file. Make sure to have those ready to paste back
                   in after installing.
                 </p>
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw] mb-2">
-                  npx shadcn-ui@latest init
-                </pre>
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
-                  npm install next-themes
-                </pre>
               </li>
               <li>
                 <p className="mb-2">
-                  Create a new file called `theme-provider.tsx` in the
-                  `components` directory:
+                  The command below is recommended for a button that toggles
+                  light and dark mode.
                 </p>
+                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
+                  jrui add themeToggle
+                </pre>
               </li>
             </ol>
+          </section>
+        </Reveal>
+        <Reveal>
+          <section className="mb-8">
+            <h3 className=" text-primary text-2xl font-semibold mb-4">
+              Component Files
+            </h3>
             <CodeTemplate
-              fileName="components/theme-provider.tsx"
+              fileName="components/Theme-provider.tsx"
               code={`"use client";
 
 import * as React from "react";
@@ -69,6 +76,42 @@ import { type ThemeProviderProps } from "next-themes/dist/types";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}`}
+            />
+            <br />
+            <CodeTemplate
+              fileName="components/ThemeToggle.tsx"
+              code={`"use client";
+
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
+export default function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  return (
+    <button onClick={toggleTheme}>
+      {theme === "light" ? (
+        <Sun
+          className=" h-11 w-11 p-[.25rem] border-gradient card-hover"
+          strokeWidth={1}
+        />
+      ) : (
+        <Moon
+          className="h-11 w-11 p-[.25rem] border-gradient card-hover"
+          strokeWidth={1}
+        />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </button>
+  );
+}
+              
 }`}
             />
           </section>
@@ -85,7 +128,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
             <CodeTemplate
               fileName="layout.tsx"
               code={` // existing imports...
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/Theme-provider";
 
 // existing code...
 
@@ -107,61 +150,7 @@ import { ThemeProvider } from "@/components/theme-provider";
             />
           </section>
         </Reveal>
-        <Reveal>
-          <section className="mb-8">
-            <h3 className="text-primary text-2xl font-semibold mb-4">
-              Adding a Toggle
-            </h3>
-            <p className="mb-4">
-              You can add a toggle component to allow users to switch between
-              light and dark modes:
-            </p>
-            <CodeTemplate
-              fileName="ThemeToggle.tsx"
-              code={`"use client";
 
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-
-const ThemeToggle = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  const renderThemeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    return (
-      <>
-        {currentTheme === "dark" ? (
-          <button
-            className="bg-gray-200 text-gray-800 p-2 rounded"
-            onClick={() => setTheme("light")}
-          >
-            Light Mode
-          </button>
-        ) : (
-          <button
-            className="bg-gray-800 text-gray-200 p-2 rounded"
-            onClick={() => setTheme("dark")}
-          >
-            Dark Mode
-          </button>
-        )}
-      </>
-    );
-  };
-
-  return <div>{renderThemeChanger()}</div>;
-};
-
-export default ThemeToggle;`}
-            />
-          </section>
-        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className="text-primary text-2xl font-semibold mb-4">
