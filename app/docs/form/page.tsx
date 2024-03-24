@@ -237,13 +237,6 @@ export default RevealDemo;
               command={"jrui add authForm reveal"}
               componentState={avatarState}
             />
-            <p className=" font-bold">
-              Note: Running this command will modify your next.config.mjs file
-              to enable the component to display Google images. If you haven't
-              customized this file for image handling, you're all set. However,
-              any existing customizations will be overwritten. Consider backing
-              up your current next.config.mjs file before proceeding.
-            </p>
           </Reveal>
         )}
 
@@ -264,9 +257,10 @@ export default RevealDemo;
               </button>
             </Reveal>
             {avatarState === "Default" && (
-              <CodeTemplate
-                fileName="components > Form.tsx"
-                code={`"use client";
+              <>
+                <CodeTemplate
+                  fileName="components > Form.tsx"
+                  code={`"use client";
 import React, { useState } from "react";
 import Jrui from "@/imgs/JRuiLogo.png";
 import Image from "next/image";
@@ -369,12 +363,77 @@ const Form = () => {
 export default Form;
                 
 `}
-              />
+                />
+                <br />
+                <CodeTemplate
+                  fileName="components > Reveal.tsx"
+                  code={`"use client";
+import React, { FC, ReactNode, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+interface RevealProps {
+  direction?: "up" | "down" | "left" | "right";
+  delay?: number;
+  duration?: number;
+  children: ReactNode;
+  className?: string;
+}
+
+const Reveal: FC<RevealProps> = ({
+  direction = "up",
+  delay = 0.2,
+  duration = 0.5,
+  children,
+  className,
+}) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        x: 0,
+        transition: { duration: duration, delay },
+      });
+    }
+  }, [controls, inView, delay]);
+
+  // Set initial styles before the animation
+  const initialStyles = {
+    opacity: 0,
+    y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+    x: direction === "left" ? 20 : direction === "right" ? -20 : 0,
+  };
+
+  return (
+    <motion.Reveal
+      className={className}
+      ref={ref}
+      initial={initialStyles}
+      animate={controls}
+    >
+      {children}
+    </motion.Reveal>
+  );
+};
+
+export default Reveal;
+              
+              
+`}
+                />
+              </>
             )}
             {avatarState === "Next/OAuth/Firebase" && (
-              <CodeTemplate
-                fileName="components > AuthForm.tsx"
-                code={`"use client";
+              <>
+                <CodeTemplate
+                  fileName="components > AuthForm.tsx"
+                  code={`"use client";
 import React, { useState } from "react";
 import Jrui from "@/imgs/JRuiLogo.png";
 import Image from "next/image";
@@ -504,7 +563,71 @@ const AuthForm = () => {
 
 export default AuthForm;
 `}
-              />
+                />
+                <br />
+                <CodeTemplate
+                  fileName="components > Reveal.tsx"
+                  code={`"use client";
+import React, { FC, ReactNode, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+interface RevealProps {
+  direction?: "up" | "down" | "left" | "right";
+  delay?: number;
+  duration?: number;
+  children: ReactNode;
+  className?: string;
+}
+
+const Reveal: FC<RevealProps> = ({
+  direction = "up",
+  delay = 0.2,
+  duration = 0.5,
+  children,
+  className,
+}) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        x: 0,
+        transition: { duration: duration, delay },
+      });
+    }
+  }, [controls, inView, delay]);
+
+  // Set initial styles before the animation
+  const initialStyles = {
+    opacity: 0,
+    y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+    x: direction === "left" ? 20 : direction === "right" ? -20 : 0,
+  };
+
+  return (
+    <motion.Reveal
+      className={className}
+      ref={ref}
+      initial={initialStyles}
+      animate={controls}
+    >
+      {children}
+    </motion.Reveal>
+  );
+};
+
+export default Reveal;
+              
+              
+`}
+                />
+              </>
             )}
           </section>
         </Reveal>
