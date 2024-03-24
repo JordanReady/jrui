@@ -32,13 +32,21 @@ const UserAvatar = () => {
     console.log("avatarState: " + avatarState);
   };
 
+  const changeState = (state: string) => {
+    if (state === "Default") {
+      setAvatarState("Next/OAuth/Firebase");
+    }
+    if (state === "Next/OAuth/Firebase") {
+      setAvatarState("Default");
+    }
+  };
+
   return (
     <DocLayout>
-      <div className="container mx-auto py-8">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">User Avatar</h1>
-          </Reveal>
+      <Reveal className="container mx-auto py-8">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">User Avatar</h1>
+
           <Reveal className="flex flex-row flex-wrap gap-2">
             <button
               className="btn-hover mt-2 md:mt-0 border-gradient px-4 py-2"
@@ -53,7 +61,7 @@ const UserAvatar = () => {
               Next/OAuth/Firebase
             </button>
           </Reveal>
-        </div>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -84,7 +92,7 @@ import UserAvatar from "@/app/demo/components/UserAvatar";
 
 const RevealDemo = () => {
   return (
-    <div className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
+    <Reveal className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
       <Reveal delay={0.5}>
         <UserAvatar img={Jrui} size={25} className="hover:animate-ping" />
       </Reveal>
@@ -109,7 +117,7 @@ const RevealDemo = () => {
           className="border-2 border-white p-4 hover:p-2 hover:scale-125 transition-all duration-300"
         />
       </Reveal>
-    </div>
+    </Reveal>
   );
 };
 
@@ -159,7 +167,7 @@ const RevealDemo = () => {
   return (
     <>
       {!session && (
-        <div className="flex flex-col center">
+        <Reveal className="flex flex-col center">
           <h1 className="text-center">Login to view this demo!</h1>
           <button
             onClick={() => signIn()}
@@ -167,9 +175,9 @@ const RevealDemo = () => {
           >
             Login
           </button>
-        </div>
+        </Reveal>
       )}
-      <div className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
+      <Reveal className="container relative p-5 flex gap-16 flex-col md:flex-row center no-scroll">
         <Reveal delay={0.5}>
           <UserAvatar size={25} className="hover:animate-ping" />
         </Reveal>
@@ -191,7 +199,7 @@ const RevealDemo = () => {
             className="border-2 border-white p-4 hover:p-2 hover:scale-125 transition-all duration-300"
           />
         </Reveal>
-      </div>
+      </Reveal>
     </>
   );
 };
@@ -280,6 +288,12 @@ export default RevealDemo;
               Component Files
             </h3>
             <p className="text-lg mb-4">
+              <button
+                className="btn-hover border-gradient px-4 py-2 mr-4"
+                onClick={() => changeState(avatarState)}
+              >
+                Change Type
+              </button>
               Component Type:{" "}
               <span className="text-primary font-bold">{avatarState}</span>
             </p>
@@ -369,6 +383,12 @@ export default UserAvatar;
               Example Use Case
             </h3>
             <p className="text-lg mb-4">
+              <button
+                className="btn-hover border-gradient px-4 py-2 mr-4"
+                onClick={() => changeState(avatarState)}
+              >
+                Change Type
+              </button>
               Component Type:{" "}
               <span className="text-primary font-bold">{avatarState}</span>
             </p>
@@ -381,14 +401,14 @@ import Img from '@/imgs/yourImg.png';
 
 const Example: React.FC = () => {
   return (
-    <div className="center h-[80dvh]">
+    <Reveal className="center h-[80dvh]">
       <UserAvatar
         img={Img}
         size={200}
         alt="This is my alt text"
         className=" border-4 border-white"
       />
-    </div>
+    </Reveal>
   );
 };
 
@@ -405,13 +425,13 @@ import UserAvatar from "@/components/UserAvatar"; // Adjust the import path base
 
 const Example: React.FC = () => {
   return (
-    <div className="center h-[80dvh]">
+    <Reveal className="center h-[80dvh]">
       <UserAvatar
         size={200}
         alt="This is my alt text"
         className=" border-4 border-white"
       />
-    </div>
+    </Reveal>
   );
 };
 
@@ -422,7 +442,7 @@ export default Example;
             )}
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

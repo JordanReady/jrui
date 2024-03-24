@@ -9,12 +9,10 @@ import CLI from "@/components/CLI";
 const ThemeToggleComponent = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8 relative">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">Theme Toggle</h1>
-          </Reveal>
-        </div>
+      <Reveal className="container mx-auto py-8 relative">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">Theme Toggle</h1>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -93,10 +91,10 @@ import ThemeToggle from "./ThemeToggle"; // Adjust the import path based on your
 
 const Example: React.FC = () => {
   return (
-    <div className="container relative p-5 flex gap-4 flex-col center no-scroll">
+    <Reveal className="container relative p-5 flex gap-4 flex-col center no-scroll">
         <h2>Click me to toggle light and dark mode!</h2>
         <ThemeToggle />
-    </div>
+    </Reveal>
   );
 };
 
@@ -106,7 +104,7 @@ export default Example;
             />
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

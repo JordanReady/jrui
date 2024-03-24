@@ -10,12 +10,10 @@ import CLI from "@/components/CLI";
 const Hero = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8 relative">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">Hero Sections</h1>
-          </Reveal>
-        </div>
+      <Reveal className="container mx-auto py-8 relative">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">Hero Sections</h1>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -99,14 +97,14 @@ const Reveal: FC<RevealProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.Reveal
       className={className}
       ref={ref}
       initial={initialStyles}
       animate={controls}
     >
       {children}
-    </motion.div>
+    </motion.Reveal>
   );
 };
 
@@ -135,8 +133,8 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="container h-[80dvh] w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-center">
-      <div className="text-center md:text-left">
+    <Reveal className="container h-[80dvh] w-full grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-center">
+      <Reveal className="text-center md:text-left">
         <Reveal direction="up">
           <h1 className=" text-6xl sm:text-9xl font-bold mb-4">
             JR
@@ -154,7 +152,7 @@ const Hero = () => {
           </p>
         </Reveal>
 
-        <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+        <Reveal className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <Reveal delay={0.8}>
             <button className="border-gradient btn-hover py-2 px-4 ">
               Ooo ooo click me!
@@ -165,9 +163,9 @@ const Hero = () => {
               No click me!
             </button>
           </Reveal>
-        </div>
-      </div>
-      <div>
+        </Reveal>
+      </Reveal>
+      <Reveal>
         <Reveal className="flex justify-center" duration={1} delay={0}>
           <Image
             placeholder="blur"
@@ -178,8 +176,8 @@ const Hero = () => {
             alt="Jordan Ready AI created animated logo"
           />
         </Reveal>
-      </div>
-    </div>
+      </Reveal>
+    </Reveal>
   );
 };
 
@@ -194,17 +192,17 @@ export default Hero;
               Example Use Case
             </h3>
             <CodeTemplate
-              fileName="app > Example.tsx"
+              fileName="Example.tsx"
               code={`import React from "react";
 import Reveal from "./Reveal"; // Adjust the import path as needed
 import Hero from "./sections/Hero"; // Adjust the import path as needed
 
 const Example: React.FC = () => {
   return (
-    <div>
+    <Reveal>
       <Hero />
       // other page content
-    </div>
+    </Reveal>
   );
 };
 
@@ -214,7 +212,7 @@ export default Example;
             />
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

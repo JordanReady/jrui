@@ -8,12 +8,10 @@ import DemoPreview from "@/components/demos/DemoPreview";
 const DarkModeSetup = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8 relative">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">Dark Mode Setup</h1>
-          </Reveal>
-        </div>
+      <Reveal className="container mx-auto py-8 relative">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">Dark Mode Setup</h1>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -168,14 +166,14 @@ import ThemeProvider from "@/components/ThemeProvider";
             <CodeTemplate
               fileName="Example.tsx
               "
-              code={`<div className=" w-20 h-20 bg-slate-200 dark:bg-slate-600">
+              code={`<Reveal className=" w-20 h-20 bg-slate-200 dark:bg-slate-600">
   <h2>Example</h2>
-</div>
+</Reveal>
 `}
             />
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

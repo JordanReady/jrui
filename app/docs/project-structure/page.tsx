@@ -6,12 +6,10 @@ import Reveal from "@/components/Reveal";
 const ProjectStructure = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8">
-        <Reveal>
-          <h1 className="text-4xl font-bold mb-4">
-            Understanding Project Structure
-          </h1>
-        </Reveal>
+      <Reveal className="container mx-auto py-8">
+        <h1 className="text-4xl font-bold mb-4">
+          Understanding Project Structure
+        </h1>
 
         {/* Overview */}
 
@@ -83,7 +81,7 @@ const ProjectStructure = () => {
             </p>
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

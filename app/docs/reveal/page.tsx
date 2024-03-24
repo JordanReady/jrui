@@ -10,12 +10,10 @@ import CLI from "@/components/CLI";
 const RevealComponent = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8 relative">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">Reveal</h1>
-          </Reveal>
-        </div>
+      <Reveal className="container mx-auto py-8 relative">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">Reveal</h1>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -32,9 +30,9 @@ const RevealComponent = () => {
             </p>
             <DemoTemplate
               title="Demo"
-              code={`<div className="container p-5 flex gap-16">
+              code={`<Reveal className="container p-5 flex gap-16">
 <Reveal delay={1}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+  <Reveal className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
     <Reveal direction="down" delay={1.2}>
       <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
         JR
@@ -55,11 +53,11 @@ const RevealComponent = () => {
         Say hello to Jrui! He's the mascot of these parts!
       </p>
     </Reveal>
-  </div>
+  </Reveal>
 </Reveal>
 
 <Reveal duration={0.25} delay={2}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+  <Reveal className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
     <Reveal direction="left" duration={0.75} delay={2.2}>
       <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
         SC
@@ -80,10 +78,10 @@ const RevealComponent = () => {
         Say hello to Scooty! She's Jrui's step-sis!
       </p>
     </Reveal>
-  </div>
+  </Reveal>
 </Reveal>
 <Reveal duration={1} delay={3}>
-  <div className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
+  <Reveal className="h-[380px] w-[210px] bg-zinc-100 border-gradient flex flex-col justify-center items-center p-2">
     <Reveal duration={1.5} direction="right" delay={3.2}>
       <h1 className=" opacity-0 md:opacity-100 text-4xl font-bold my-2">
         BO
@@ -104,9 +102,9 @@ const RevealComponent = () => {
         Say hello to Booty! He's Jrui's step-bro!
       </p>
     </Reveal>
-  </div>
+  </Reveal>
 </Reveal>
-</div>
+</Reveal>
 `}
             >
               <RevealDemo />
@@ -218,14 +216,14 @@ const Reveal: FC<RevealProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.Reveal
       className={className}
       ref={ref}
       initial={initialStyles}
       animate={controls}
     >
       {children}
-    </motion.div>
+    </motion.Reveal>
   );
 };
 
@@ -248,7 +246,7 @@ import Reveal from "./Reveal"; // Adjust the import path based on your project s
 
 const Example: React.FC = () => {
   return (
-    <div>
+    <Reveal>
       <h1>Your Content Before Reveal</h1>
 
       {/* Example with default settings (up direction, default delay) */}
@@ -272,7 +270,7 @@ const Example: React.FC = () => {
       </Reveal>
 
       <h1>Your Content After Reveal</h1>
-    </div>
+    </Reveal>
   );
 };
 
@@ -282,7 +280,7 @@ export default Example;
             />
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

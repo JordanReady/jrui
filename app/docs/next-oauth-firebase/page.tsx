@@ -6,10 +6,9 @@ import Link from "next/link";
 const NextOauthFirebase = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8">
-        <Reveal>
-          <h1 className="text-4xl font-bold mb-4">Next OAuth and Firebase</h1>
-        </Reveal>
+      <Reveal className="container mx-auto py-8">
+        <h1 className="text-4xl font-bold mb-4">Next OAuth and Firebase</h1>
+
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -20,30 +19,30 @@ const NextOauthFirebase = () => {
               your Next.js app, pre-equipped with NextAuth.js and Firebase for
               seamless authentication. Follow the outlined steps to effortlessly
               set up your project. If you're new to any part of the process,
-              dive into the detailed step-by-step guides by clicking on the
+              Reveale into the detailed step-by-step guides by clicking on the
               respective steps card. Fun fact: this site was built using this
               very template!
             </p>
-            <div className="flex flex-wrap gap-2">
-              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+            <Reveal className="flex flex-wrap gap-2">
+              <Reveal className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
                 <Link
                   target="blank"
                   href={"https://auth-firebase-starter-kit.vercel.app/"}
                 >
                   Live Preview
                 </Link>
-              </div>
-              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+              </Reveal>
+              <Reveal className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
                 <Link target="blank" href={"/docs/next-oauth-firebase/setup"}>
                   Setup Video Guide
                 </Link>
-              </div>
-              <div className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
+              </Reveal>
+              <Reveal className="btn-hover border-gradient border mt-2 py-2 px-4 w-max">
                 <Link target="blank" href={"/docs/next-oauth-firebase/deploy"}>
                   Deploy Video Guide
                 </Link>
-              </div>
-            </div>
+              </Reveal>
+            </Reveal>
           </section>
         </Reveal>
 
@@ -207,7 +206,7 @@ const NextOauthFirebase = () => {
             </p>
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

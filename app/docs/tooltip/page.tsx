@@ -10,12 +10,10 @@ import CLI from "@/components/CLI";
 const RevealComponent = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8 relative">
-        <div className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
-          <Reveal>
-            <h1 className="text-4xl font-bold ">Tooltip</h1>
-          </Reveal>
-        </div>
+      <Reveal className="container mx-auto py-8 relative">
+        <Reveal className="flex min-w-full flex-col md:flex-row md:justify-between mb-4">
+          <h1 className="text-4xl font-bold ">Tooltip</h1>
+        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className=" text-primary text-2xl font-semibold mb-4">
@@ -44,9 +42,9 @@ import Tooltip from "@/app/demo/components/Tooltip";
 
 const RevealDemo = () => {
   return (
-    <div className="container relative p-5 flex gap-16 flex-col md:flex-row center ">
+    <Reveal className="container relative p-5 flex gap-16 flex-col md:flex-row center ">
       <Reveal className=" flex flew-row gap-4 absolute top-2 left-2   ">
-        <div className="">
+        <Reveal className="">
           <Reveal className="flex gap-4">
             <Tooltip
               animationDirection="right"
@@ -114,10 +112,10 @@ const RevealDemo = () => {
               </svg>
             </Tooltip>
           </Reveal>
-        </div>
+        </Reveal>
       </Reveal>
       <Reveal>
-        <div className="h-[380px] w-[210px]  flex flex-col justify-center items-center relative">
+        <Reveal className="h-[380px] w-[210px]  flex flex-col justify-center items-center relative">
           <Tooltip
             className="mt-[-350px]"
             animationDirection="up"
@@ -128,10 +126,10 @@ const RevealDemo = () => {
               <Image src={Jrui} alt="It's Jrui the mascot!!" />
             </Reveal>
           </Tooltip>
-        </div>
+        </Reveal>
       </Reveal>
       <Reveal>
-        <div className=" w-[210px] gap-8 flex flex-col justify-center items-center ">
+        <Reveal className=" w-[210px] gap-8 flex flex-col justify-center items-center ">
           <Tooltip
             className="mt-[-40px]"
             offset={7}
@@ -165,9 +163,9 @@ const RevealDemo = () => {
               <p>Text</p>
             </Reveal>
           </Tooltip>
-        </div>
+        </Reveal>
       </Reveal>
-    </div>
+    </Reveal>
   );
 };
 
@@ -309,7 +307,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   const [isHovered, setHovered] = useState(false);
 
   return (
-    <div
+    <Reveal
       className="relative z-[999] inline-block"
       onMouseEnter={() => setTimeout(() => setHovered(true), delayIn)}
       onMouseLeave={() => setTimeout(() => setHovered(false), delayOut)}
@@ -317,15 +315,15 @@ const Tooltip: React.FC<TooltipProps> = ({
       {children}
       {isHovered && (
         <Reveal direction={animationDirection} duration={animationDuration}>
-          <div
+          <Reveal
             className={\` \${className} mt-1 absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999] left-[50%]\`}
             style={{ width: width + "rem", left: \`calc(50% + \${offset}rem)\` }}
           >
             <p className="p-1 text-[14px] text-center m-0">{tip}</p>
-          </div>
+          </Reveal>
         </Reveal>
       )}
-    </div>
+    </Reveal>
   );
 };
 
@@ -379,14 +377,14 @@ const Reveal: FC<RevealProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.Reveal
       className={className}
       ref={ref}
       initial={initialStyles}
       animate={controls}
     >
       {children}
-    </motion.div>
+    </motion.Reveal>
   );
 };
 
@@ -409,7 +407,7 @@ import Tooltip from "@/components/Tooltip"; // Adjust the import path based on y
 
 const Example: React.FC = () => {
   return (
-    <div className="center h-[80dvh]">
+    <Reveal className="center h-[80dvh]">
       <Tooltip
         tip="This is a tooltip"
         width={8}
@@ -420,7 +418,7 @@ const Example: React.FC = () => {
         delayOut={200}
         className=" border-4 border-white"
       />
-    </div>
+    </Reveal>
   );
 };
 
@@ -429,7 +427,7 @@ export default Example;
             />
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };

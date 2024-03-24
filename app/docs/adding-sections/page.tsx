@@ -5,12 +5,10 @@ import Reveal from "@/components/Reveal";
 const AddingSections = () => {
   return (
     <DocLayout>
-      <div className="container mx-auto py-8">
-        <Reveal>
-          <h1 className="text-4xl font-bold mb-4">
-            Adding Sections to Your Project
-          </h1>
-        </Reveal>
+      <Reveal className="container mx-auto py-8">
+        <h1 className="text-4xl font-bold mb-4">
+          Adding Sections to Your Project
+        </h1>
 
         {/* Overview */}
         <Reveal>
@@ -62,7 +60,7 @@ const AddingSections = () => {
             </p>
           </section>
         </Reveal>
-      </div>
+      </Reveal>
     </DocLayout>
   );
 };
