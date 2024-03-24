@@ -41,7 +41,7 @@ const DarkModeSetup = () => {
                   dependencies:
                 </p>
                 <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw] mb-2">
-                  jrui add theme-provider
+                  jrui add themeProvider
                 </pre>
                 <p className="mb-2 font-bold">
                   Note: This will override any custom styles you have in your
@@ -67,14 +67,14 @@ const DarkModeSetup = () => {
               Component Files
             </h3>
             <CodeTemplate
-              fileName="components/Theme-provider.tsx"
+              fileName="components/ThemeProvider.tsx"
               code={`"use client";
 
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+export default function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }`}
             />
@@ -128,7 +128,7 @@ export default function ThemeToggle() {
             <CodeTemplate
               fileName="layout.tsx"
               code={` // existing imports...
-import { ThemeProvider } from "@/components/Theme-provider";
+import ThemeProvider from "@/components/ThemeProvider";
 
 // existing code...
 

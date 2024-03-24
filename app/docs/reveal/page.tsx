@@ -164,32 +164,8 @@ const RevealComponent = () => {
             </DemoTemplate>
           </section>
         </Reveal>
-        <Reveal>
-          <section className="mb-8">
-            <h3 className="text-primary text-2xl font-semibold mb-4">
-              Dependencies
-            </h3>
-            <p>
-              Ensure you have the following dependencies installed in your
-              project:
-            </p>
-            <ul>
-              <li>
-                The `Reveal` component utilizes Framer Motion for animations.
-                Install it with:
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
-                  npm install framer-motion
-                </pre>{" "}
-              </li>
-              <li>
-                The `useInView` hook, used for detecting when the component is
-                in view, requires this dependency. Install it with:
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
-                  npm install react-intersection-observer
-                </pre>{" "}
-              </li>
-            </ul>
-          </section>
+        <Reveal className="mb-6">
+          <CLI command={"jrui add reveal"} />
         </Reveal>
         <Reveal>
           <section className="mb-8">
@@ -197,7 +173,7 @@ const RevealComponent = () => {
               Component File
             </h3>
             <CodeTemplate
-              fileName="Components > Reveal.tsx"
+              fileName="components > Reveal.tsx"
               code={`"use client";
 import React, { FC, ReactNode, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -266,7 +242,7 @@ export default Reveal;
               Example Use Case
             </h3>
             <CodeTemplate
-              fileName="app > Example.tsx"
+              fileName="Example.tsx"
               code={`import React from "react";
 import Reveal from "./Reveal"; // Adjust the import path based on your project structure
 

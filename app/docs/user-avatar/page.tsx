@@ -285,7 +285,7 @@ export default RevealDemo;
             </p>
             {avatarState === "Default" && (
               <CodeTemplate
-                fileName="Components > UserAvatar.tsx"
+                fileName="components > UserAvatar.tsx"
                 code={`import React from "react";
 import Image, { StaticImageData } from "next/image";
 
@@ -321,7 +321,7 @@ export default UserAvatar;
             )}
             {avatarState === "Next/OAuth/Firebase" && (
               <CodeTemplate
-                fileName="Components > UserAvatar.tsx"
+                fileName="components > UserAvatar.tsx"
                 code={`"use client";
 import React from "react";
 import Image from "next/image";
@@ -374,7 +374,7 @@ export default UserAvatar;
             </p>
             {avatarState === "Default" && (
               <CodeTemplate
-                fileName="app > Example.tsx"
+                fileName="Example.tsx"
                 code={`import React from "react";
 import UserAvatar from "@/components/UserAvatar"; // Adjust the import path based on your project structure
 import Img from '@/imgs/yourImg.png';
@@ -399,7 +399,7 @@ export default Example;
             )}
             {avatarState === "Next/OAuth/Firebase" && (
               <CodeTemplate
-                fileName="app > Example.tsx"
+                fileName="Example.tsx"
                 code={`import React from "react";
 import UserAvatar from "@/components/UserAvatar"; // Adjust the import path based on your project structure
 

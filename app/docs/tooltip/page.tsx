@@ -270,40 +270,71 @@ export default RevealDemo;
             </Reveal>
           </section>
         </Reveal>
-        <Reveal>
-          <section className="mb-8">
-            <h3 className="text-primary text-2xl font-semibold mb-4">
-              Dependencies
-            </h3>
-            <p>
-              Ensure you have the following dependencies installed in your
-              project:
-            </p>
-            <ul>
-              <li>
-                The `Reveal` component utilizes Framer Motion for animations.
-                Install it with:
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
-                  npm install framer-motion
-                </pre>{" "}
-              </li>
-              <li>
-                The `useInView` hook, used for detecting when the component is
-                in view, requires this dependency. Install it with:
-                <pre className="w-max dark:bg-[#3b3b3b] bg-gray-200 p-4 rounded-md overflow-x-auto max-w-[90dvw]">
-                  npm install react-intersection-observer
-                </pre>{" "}
-              </li>
-            </ul>
-          </section>
-        </Reveal>
+
         <Reveal>
           <section className="mb-8">
             <h3 className="text-primary text-2xl font-semibold mb-4">
               Component Files
             </h3>
             <CodeTemplate
-              fileName="Components > Reveal.tsx"
+              fileName="components > Tooltip.tsx"
+              code={`
+"use client";
+import React, { ReactNode, useState } from "react";
+import Reveal from "./Reveal";
+
+interface TooltipProps {
+  tip: string;
+  width?: "max-content" | number;
+  offset?: "50%" | number;
+  animationDirection?: "up" | "down" | "left" | "right";
+  delayIn?: number;
+  delayOut?: number;
+  animationDuration?: number;
+  className?: string;
+  children: ReactNode;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({
+  tip,
+  className,
+  width = "max-content",
+  offset = "50%",
+  animationDirection = "up",
+  animationDuration = 0.2,
+  delayIn = 200,
+  delayOut = 200,
+  children,
+}) => {
+  const [isHovered, setHovered] = useState(false);
+
+  return (
+    <div
+      className="relative z-[999] inline-block"
+      onMouseEnter={() => setTimeout(() => setHovered(true), delayIn)}
+      onMouseLeave={() => setTimeout(() => setHovered(false), delayOut)}
+    >
+      {children}
+      {isHovered && (
+        <Reveal direction={animationDirection} duration={animationDuration}>
+          <div
+            className={\` \${className} mt-1 absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999] left-[50%]\`}
+            style={{ width: width + "rem", left: \`calc(50% + \${offset}rem)\` }}
+          >
+            <p className="p-1 text-[14px] text-center m-0">{tip}</p>
+          </div>
+        </Reveal>
+      )}
+    </div>
+  );
+};
+
+export default Tooltip;
+`}
+            />
+            <br />
+            <CodeTemplate
+              fileName="components > Reveal.tsx"
               code={`"use client";
 import React, { FC, ReactNode, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -364,63 +395,6 @@ export default Reveal;
               
 `}
             />
-            <br />
-            <CodeTemplate
-              fileName="Components > Tooltip.tsx"
-              code={`
-"use client";
-import React, { ReactNode, useState } from "react";
-import Reveal from "./Reveal";
-
-interface TooltipProps {
-  tip: string;
-  width?: "max-content" | number;
-  offset?: "50%" | number;
-  animationDirection?: "up" | "down" | "left" | "right";
-  delayIn?: number;
-  delayOut?: number;
-  animationDuration?: number;
-  className?: string;
-  children: ReactNode;
-}
-
-const Tooltip: React.FC<TooltipProps> = ({
-  tip,
-  className,
-  width = "max-content",
-  offset = "50%",
-  animationDirection = "up",
-  animationDuration = 0.2,
-  delayIn = 200,
-  delayOut = 200,
-  children,
-}) => {
-  const [isHovered, setHovered] = useState(false);
-
-  return (
-    <div
-      className="relative z-[999] inline-block"
-      onMouseEnter={() => setTimeout(() => setHovered(true), delayIn)}
-      onMouseLeave={() => setTimeout(() => setHovered(false), delayOut)}
-    >
-      {children}
-      {isHovered && (
-        <Reveal direction={animationDirection} duration={animationDuration}>
-          <div
-            className={\` \${className} mt-1 absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999] left-[50%]\`}
-            style={{ width: width + "rem", left: \`calc(50% + \${offset}rem)\` }}
-          >
-            <p className="p-1 text-[14px] text-center m-0">{tip}</p>
-          </div>
-        </Reveal>
-      )}
-    </div>
-  );
-};
-
-export default Tooltip;
-`}
-            />
           </section>
         </Reveal>
         <Reveal>
@@ -429,42 +403,28 @@ export default Tooltip;
               Example Use Case
             </h3>
             <CodeTemplate
-              fileName="app > Example.tsx"
+              fileName="Example.tsx"
               code={`import React from "react";
-import Reveal from "./Reveal"; // Adjust the import path based on your project structure
+import Tooltip from "@/components/Tooltip"; // Adjust the import path based on your project structure
 
 const Example: React.FC = () => {
   return (
-    <div>
-      <h1>Your Content Before Reveal</h1>
-
-      {/* Example with default settings (up direction, default delay) */}
-      <Reveal>
-        <p>This content will be revealed with default settings.</p>
-      </Reveal>
-
-      {/* Example with custom direction (right) and delay */}
-      <Reveal direction="right" delay={0.5}>
-        <p>This content will be revealed from the right with a delay of 0.5 seconds.</p>
-      </Reveal>
-
-      {/* Example with custom direction (down) and no delay */}
-      <Reveal direction="down">
-        <p>This content will be revealed from the bottom with no delay.</p>
-      </Reveal>
-
-      {/* Example with custom direction (left), duration and custom class name */}
-      <Reveal duration={1} direction="left" className="ligma-nutz">
-        <p>This content will be revealed from the left with default delay.</p>
-      </Reveal>
-
-      <h1>Your Content After Reveal</h1>
+    <div className="center h-[80dvh]">
+      <Tooltip
+        tip="This is a tooltip"
+        width={8}
+        offset={7}
+        animationDirection="up"
+        animationDuration={0.5}
+        delayIn={200}
+        delayOut={200}
+        className=" border-4 border-white"
+      />
     </div>
   );
 };
 
 export default Example;
-              
 `}
             />
           </section>
