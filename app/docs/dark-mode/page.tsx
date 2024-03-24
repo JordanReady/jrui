@@ -31,8 +31,8 @@ const DarkModeSetup = () => {
         </Reveal>
         <Reveal>
           <section className="mb-8">
-            <h3 className="text-primary text-2xl font-semibold mb-4">
-              Installation
+            <h3 className="text-primary text-2xl font-semibold my-4">
+              Easy CLI Install
             </h3>
             <ol className="list-decimal pl-5">
               <li>
@@ -148,6 +148,10 @@ import { ThemeProvider } from "@/components/Theme-provider";
   );
 }`}
             />
+            <p className="mt-4">
+              Note: You may need to restart your development server for the
+              changes to take effect!
+            </p>
           </section>
         </Reveal>
 

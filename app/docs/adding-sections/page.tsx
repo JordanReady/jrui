@@ -34,11 +34,11 @@ const AddingSections = () => {
               Section Placement
             </h2>
             <p>
-              All JRui sections are organized within the `components` folder in
+              All JRui sections are organized within the "components" folder in
               your project. To integrate a section into your project, use the
               CLI to easily import the section into your project, or navigate to
-              the desired directory you want the section to be, copy the code,
-              and paste it into the selected folder in your project.
+              the desired folder where you want the section to be, copy the
+              code, and paste it into the selected folder in your project.
             </p>
           </section>
         </Reveal>
@@ -51,9 +51,9 @@ const AddingSections = () => {
             </h2>
             <p>
               JRui sections are crafted with specific layouts in mind, providing
-              ready-made structures for common UI elements like hero sections or
-              card layouts. Explore badges on sections indicating their
-              compatibility with specific layouts.
+              ready-made structures for common UI elements like hero or contact
+              sections. This will give you a good starting point to begin
+              styling your project to your requirements and aesthetics.
             </p>
             <p>
               While sections are designed for specific layouts, they can be

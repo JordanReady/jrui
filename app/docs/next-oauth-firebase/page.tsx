@@ -62,6 +62,10 @@ const NextOauthFirebase = () => {
             <pre className=" dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md overflow-x-scroll ">
               {`git clone https://github.com/JordanReady/auth-firebase-starter-kit.git your-app-name`}
             </pre>
+            <p className="mt-2">
+              This project comes with step by step instructions to get everthing
+              setup properly. There is a brief overview below.
+            </p>
           </section>
         </Reveal>
 

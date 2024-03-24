@@ -15,7 +15,7 @@ const AddingComponents = () => {
         {/* Overview */}
         <Reveal>
           <section className="mb-8">
-            <h2 className=" text-primary text-2xl font-semibold mb-4">
+            <h2 className="text-primary text-2xl font-semibold mb-4">
               Overview
             </h2>
             <p>
@@ -30,35 +30,36 @@ const AddingComponents = () => {
         {/* Component Placement */}
         <Reveal>
           <section className="mb-8">
-            <h2 className=" text-primary text-2xl font-semibold mb-4">
+            <h2 className="text-primary text-2xl font-semibold mb-4">
               Component Placement
             </h2>
             <p>
-              All JRui components are designed to be added to the `components`
-              folder in your project. This ensures a clean and organized
+              All JRui components are designed to be added to the "components"
+              folder in your root directory. This ensures a clean and organized
               structure.
             </p>
             <p>
-              Simply locate the component you want to import into your project,
-              use the CLI to install the component, or copy the code and paste
-              it into the `components` folder in your project.
+              Simply choose the component you want to import into your project,
+              use the CLI to easily install the component and all necessary
+              dependencies, or copy the code and paste it into your desired
+              folder in your project.
             </p>
           </section>
         </Reveal>
 
-        {/* Layout Integration */}
+        {/* Template Integration */}
         <Reveal>
           <section className="mb-8">
-            <h2 className=" text-primary text-2xl font-semibold mb-4">
-              Layout Integration
+            <h2 className="text-primary text-2xl font-semibold mb-4">
+              Template Integration
             </h2>
             <p>
               Components in JRui are crafted to work seamlessly with specific
-              layouts. When browsing components, you'll notice badges indicating
-              if a component is designed for a particular layout.
+              templates. When browsing components, you'll notice badges
+              indicating if a component is designed for a particular template.
             </p>
             <p>
-              While components are created with specific layouts in mind, they
+              While components are created with specific templates in mind, they
               can be modified to fit into your existing project's structure and
               styling.
             </p>

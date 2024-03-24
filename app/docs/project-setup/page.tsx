@@ -9,26 +9,26 @@ const ProjectSetup = () => {
         <Reveal>
           <h1 className="text-4xl font-bold mb-4">Project Setup</h1>
         </Reveal>
-        {/* Overview */}
+
         <Reveal>
           <section className="mb-8">
             <h2 className="text-primary text-2xl font-semibold mb-4">
               Overview
             </h2>
             <p>
-              Setting up a project with JRui is a breeze. Follow these steps to
-              get started with your chosen template:
+              Setting up a project with JRui is straightforward. Follow these
+              steps to get started with your chosen template:
             </p>
           </section>
         </Reveal>
-        {/* Cloning the Repo */}
+
         <Reveal>
           <section className="mb-8">
             <h2 className="text-primary text-2xl font-semibold mb-4">
               Cloning the Repository
             </h2>
             <p>
-              Start your project by cloning the JRui template repository using
+              Begin your project by cloning the JRui template repository using
               the provided command:
             </p>
             <pre className="dark:bg-[#3b3b3b] w-max bg-gray-200 p-4 rounded-md">
@@ -40,7 +40,7 @@ const ProjectSetup = () => {
             </p>
           </section>
         </Reveal>
-        {/* Installing Dependencies */}
+
         <Reveal>
           <section className="mb-8">
             <h2 className="text-primary text-2xl font-semibold mb-4">
@@ -59,7 +59,7 @@ const ProjectSetup = () => {
             </p>
           </section>
         </Reveal>
-        {/* Running the Template */}
+
         <Reveal>
           <section className="mb-8">
             <h2 className="text-primary text-2xl font-semibold mb-4">
@@ -74,7 +74,6 @@ const ProjectSetup = () => {
           </section>
         </Reveal>
 
-        {/* Customizing and Importing Components */}
         <Reveal>
           <section>
             <h2 className="text-primary text-2xl font-semibold mb-4">
@@ -84,7 +83,7 @@ const ProjectSetup = () => {
               Follow any additional project setup instructions provided with the
               template to properly integrate technologies. Once set up, start
               customizing your project to fit your preferences and import
-              components as needed.
+              components as needed with the JRui CLI.
             </p>
           </section>
         </Reveal>

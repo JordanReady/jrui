@@ -9,7 +9,7 @@ const CLI: React.FC<CLIProps> = ({ command, componentState }) => {
   return (
     <>
       <h2 className=" text-primary text-2xl font-semibold mb-4">
-        Easy CLI install
+        Easy CLI Install
       </h2>
       {componentState && (
         <p className="text-lg mb-4">
