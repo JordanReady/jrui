@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { CornerDownRight, Menu, X } from "lucide-react";
 import SidebarControls from "./SidebarControls";
+import NewBadge from "./NewBadge";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -128,10 +129,14 @@ const Sidebar = () => {
           Docs Layout
         </Link>
         <h1 className="text-primary font-semibold text-xl">Features</h1>
-        <Link className={getLinkClassName("dark-mode")} href="/docs/dark-mode">
-          Dark Mode
-        </Link>
-
+        <NewBadge>
+          <Link
+            className={getLinkClassName("dark-mode")}
+            href="/docs/dark-mode"
+          >
+            Dark Mode
+          </Link>
+        </NewBadge>
         <h1 className="text-primary font-semibold text-xl">Sections</h1>
         <Link className={getLinkClassName("hero")} href="/docs/hero">
           Hero
@@ -150,13 +155,14 @@ const Sidebar = () => {
         <Link className={getLinkClassName("tooltip")} href="/docs/tooltip">
           Tooltip
         </Link>
-        <Link
-          className={getLinkClassName("user-avatar")}
-          href="/docs/user-avatar"
-        >
-          User Avatar
-        </Link>
-
+        <NewBadge>
+          <Link
+            className={getLinkClassName("user-avatar")}
+            href="/docs/user-avatar"
+          >
+            User Avatar
+          </Link>
+        </NewBadge>
         <SidebarControls />
       </div>
     </>

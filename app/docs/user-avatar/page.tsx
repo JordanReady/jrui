@@ -287,16 +287,17 @@ export default RevealDemo;
             <h3 className="text-primary text-2xl font-semibold mb-4">
               Component Files
             </h3>
-            <p className="text-lg mb-4">
+            <Reveal className="text-lg mb-4">
+              Component Type:{" "}
+              <span className="text-primary font-bold">{avatarState}</span>
+              <br />
               <button
-                className="btn-hover border-gradient px-4 py-2 mr-4"
+                className="btn-hover border-gradient px-4 py-2 mt-2"
                 onClick={() => changeState(avatarState)}
               >
                 Change Type
               </button>
-              Component Type:{" "}
-              <span className="text-primary font-bold">{avatarState}</span>
-            </p>
+            </Reveal>
             {avatarState === "Default" && (
               <CodeTemplate
                 fileName="components > UserAvatar.tsx"
@@ -382,16 +383,17 @@ export default UserAvatar;
             <h3 className="text-primary text-2xl font-semibold mb-4">
               Example Use Case
             </h3>
-            <p className="text-lg mb-4">
+            <Reveal className="text-lg mb-4">
+              Component Type:{" "}
+              <span className="text-primary font-bold">{avatarState}</span>
+              <br />
               <button
-                className="btn-hover border-gradient px-4 py-2 mr-4"
+                className="btn-hover border-gradient px-4 py-2 mt-2"
                 onClick={() => changeState(avatarState)}
               >
                 Change Type
               </button>
-              Component Type:{" "}
-              <span className="text-primary font-bold">{avatarState}</span>
-            </p>
+            </Reveal>
             {avatarState === "Default" && (
               <CodeTemplate
                 fileName="Example.tsx"
