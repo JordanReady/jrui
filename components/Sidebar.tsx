@@ -114,20 +114,21 @@ const Sidebar = () => {
         >
           Next/OAuth/Firebase
         </Link>
-
-        <Link
-          className={` group flex ${getSubLinkClassName(
-            "next-oauth-firebase/docs"
-          )}`}
-          href="/docs/next-oauth-firebase/docs"
-        >
-          <CornerDownRight
-            className=" group-hover:text-purple-600 "
-            size={20}
-            strokeWidth={1}
-          />
-          Docs Layout
-        </Link>
+        <NewBadge>
+          <Link
+            className={` group flex ${getSubLinkClassName(
+              "next-oauth-firebase/docs"
+            )}`}
+            href="/docs/next-oauth-firebase/docs"
+          >
+            <CornerDownRight
+              className=" group-hover:text-purple-600 "
+              size={20}
+              strokeWidth={1}
+            />
+            Docs Layout
+          </Link>
+        </NewBadge>
         <h1 className="text-primary font-semibold text-xl">Features</h1>
         <NewBadge>
           <Link
@@ -138,11 +139,17 @@ const Sidebar = () => {
           </Link>
         </NewBadge>
         <h1 className="text-primary font-semibold text-xl">Sections</h1>
-        <Link className={getLinkClassName("hero")} href="/docs/hero">
-          Hero
-        </Link>
-
+        <NewBadge>
+          <Link className={getLinkClassName("hero")} href="/docs/hero">
+            Hero
+          </Link>
+        </NewBadge>
         <h1 className="text-primary font-semibold text-xl">Components</h1>
+        <NewBadge>
+          <Link className={getLinkClassName("form")} href="/docs/form">
+            Form
+          </Link>
+        </NewBadge>
         <Link className={getLinkClassName("reveal")} href="/docs/reveal">
           Reveal
         </Link>
@@ -155,14 +162,14 @@ const Sidebar = () => {
         <Link className={getLinkClassName("tooltip")} href="/docs/tooltip">
           Tooltip
         </Link>
-        <NewBadge>
-          <Link
-            className={getLinkClassName("user-avatar")}
-            href="/docs/user-avatar"
-          >
-            User Avatar
-          </Link>
-        </NewBadge>
+
+        <Link
+          className={getLinkClassName("user-avatar")}
+          href="/docs/user-avatar"
+        >
+          User Avatar
+        </Link>
+
         <SidebarControls />
       </div>
     </>

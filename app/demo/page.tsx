@@ -7,11 +7,13 @@ import Hero from "./sections/Hero";
 import UserAvatar from "./components/UserAvatarNextOAuthFirebase";
 // import UserAvatar from "./components/UserAvatar";
 import ThemeToggle from "./components/ThemeToggle";
+import AuthForm from "./components/AuthForm";
+import Form from "./components/Form";
 
 const Demo = () => {
   return (
     <div className="center h-[80dvh]">
-      <ThemeToggle />
+      <AuthForm />
     </div>
   );
 };
