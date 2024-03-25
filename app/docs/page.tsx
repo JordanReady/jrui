@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "./DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Getting Started",
+  description:
+    "Discover the ultimate toolkit for simplifying your web development journey! Streamline your workflow with JRui's easy-to-use templates, components, sections, and features. Built with Next.js, React, TypeScript, and TailwindCSS, JRui empowers developers to create stunning full-stack applications with ease.",
+  openGraph: {
+    title: "Getting Started",
+    description:
+      "Discover the ultimate toolkit for simplifying your web development journey! Streamline your workflow with JRui's easy-to-use templates, components, sections, and features. Built with Next.js, React, TypeScript, and TailwindCSS, JRui empowers developers to create stunning full-stack applications with ease.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const GettingStarted = () => {
   return (

@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adding Features",
+  description:
+    "Discover how to seamlessly integrate powerful features into your project with JRui. Enhance user experience and elevate functionality by following step-by-step instructions for feature integration. Explore template compatibility to ensure seamless integration with your chosen template.",
+  openGraph: {
+    title: "Adding Features",
+    description:
+      "Discover how to seamlessly integrate powerful features into your project with JRui. Enhance user experience and elevate functionality by following step-by-step instructions for feature integration. Explore template compatibility to ensure seamless integration with your chosen template.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const AddingFeatures = () => {
   return (

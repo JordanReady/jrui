@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Project Setup",
+  description:
+    "Learn how to set up your project with JRui in a few simple steps. Follow the instructions to clone the template repository, install dependencies, run the template, and customize your project to fit your needs.",
+  openGraph: {
+    title: "Project Setup",
+    description:
+      "Learn how to set up your project with JRui in a few simple steps. Follow the instructions to clone the template repository, install dependencies, run the template, and customize your project to fit your needs.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const ProjectSetup = () => {
   return (

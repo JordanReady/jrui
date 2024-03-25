@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adding Sections",
+  description:
+    "Learn how to effortlessly integrate pre-designed layouts and structures into your project with JRui. Follow step-by-step instructions to add sections that enhance the visual appeal of your application. Explore layout integration options and customization possibilities to tailor sections to your project's needs.",
+  openGraph: {
+    title: "Adding Sections",
+    description:
+      "Learn how to effortlessly integrate pre-designed layouts and structures into your project with JRui. Follow step-by-step instructions to add sections that enhance the visual appeal of your application. Explore layout integration options and customization possibilities to tailor sections to your project's needs.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const AddingSections = () => {
   return (

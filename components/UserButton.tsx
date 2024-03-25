@@ -27,7 +27,7 @@ const UserButton = () => {
     <div className="relative">
       <button
         onClick={handleButtonClick}
-        className={`px-4 py-2 border btn-hover border-gradient ${
+        className={`px-3 py-2 border btn-hover border-gradient ${
           session ? "signed-in" : ""
         }`}
       >

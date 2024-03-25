@@ -6,6 +6,20 @@ import DemoTemplate from "@/components/DemoTemplate";
 import RevealDemo from "@/components/demos/RevealDemo";
 import RevealDemo2 from "@/components/demos/RevealDemo2";
 import CLI from "@/components/CLI";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Reveal",
+  description:
+    "Learn how to use the Reveal component in JRui to add smooth animations to your React applications. Explore its features, including direction control, delay, and duration settings, to create engaging user interfaces.",
+  openGraph: {
+    title: "Reveal",
+    description:
+      "Learn how to use the Reveal component in JRui to add smooth animations to your React applications. Explore its features, including direction control, delay, and duration settings, to create engaging user interfaces.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const RevealComponent = () => {
   return (

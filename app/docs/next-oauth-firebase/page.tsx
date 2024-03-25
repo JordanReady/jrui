@@ -2,6 +2,20 @@ import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Next OAuth and Firebase",
+  description:
+    "Jumpstart your Next.js journey with OAuth and Firebase. Learn how to set up NextAuth.js and Firebase for seamless authentication in your Next.js app. Follow the step-by-step guides to clone the repository, set up Google Cloud and Firebase projects, configure environment files, customize your app, and deploy it to Vercel.",
+  openGraph: {
+    title: "Next OAuth and Firebase",
+    description:
+      "Jumpstart your Next.js journey with OAuth and Firebase. Learn how to set up NextAuth.js and Firebase for seamless authentication in your Next.js app. Follow the step-by-step guides to clone the repository, set up Google Cloud and Firebase projects, configure environment files, customize your app, and deploy it to Vercel.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const NextOauthFirebase = () => {
   return (

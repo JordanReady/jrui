@@ -2,8 +2,21 @@ import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
 import CodeTemplate from "@/components/CodeTemplate";
-import DemoTemplate from "@/components/DemoTemplate";
 import DemoPreview from "@/components/demos/DemoPreview";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dark Mode Setup",
+  description:
+    "Learn how to set up dark mode functionality in your Next.js application using the `next-themes` library and Shadcn. Follow the step-by-step guide to install dependencies, create theme components, integrate them into your layout, and customize styles based on light and dark modes.",
+  openGraph: {
+    title: "Dark Mode Setup",
+    description:
+      "Learn how to set up dark mode functionality in your Next.js application using the `next-themes` library and Shadcn. Follow the step-by-step guide to install dependencies, create theme components, integrate them into your layout, and customize styles based on light and dark modes.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const DarkModeSetup = () => {
   return (

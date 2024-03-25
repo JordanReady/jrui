@@ -22,7 +22,10 @@ const Sidebar = () => {
     const baseClassName =
       "group hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:translate-x-1 duration-100";
 
-    const subLink = window.location.pathname.split("/").slice(-2).join("/");
+    const subLink =
+      typeof window !== "undefined"
+        ? window.location.pathname.split("/").slice(-2).join("/")
+        : "";
 
     return subLink === path
       ? `${baseClassName} group text-primary translate-x-1`

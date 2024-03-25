@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adding Components",
+  description:
+    "Learn how to enhance your development experience by seamlessly integrating components into your project with JRui. Follow step-by-step instructions to add components, ensuring a clean and organized structure. Explore template integration options and customization possibilities to tailor components to your project's needs.",
+  openGraph: {
+    title: "Adding Components",
+    description:
+      "Learn how to enhance your development experience by seamlessly integrating components into your project with JRui. Follow step-by-step instructions to add components, ensuring a clean and organized structure. Explore template integration options and customization possibilities to tailor components to your project's needs.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const AddingComponents = () => {
   return (

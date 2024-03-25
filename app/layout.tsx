@@ -12,7 +12,10 @@ import FirebaseAuthProvider from "@/components/FirebaseAuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "JRUI",
+  title: {
+    default: "JRui",
+    template: "JRui | %s",
+  },
   description: "Personal devloper resource and UI library",
   icons: {
     icon: ["/favicon.ico?v=4"],

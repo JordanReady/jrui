@@ -5,6 +5,20 @@ import CodeTemplate from "@/components/CodeTemplate";
 import DemoTemplate from "@/components/DemoTemplate";
 import ThemeToggleDemo from "@/components/demos/ThemeToggleDemo";
 import CLI from "@/components/CLI";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Theme Toggle",
+  description:
+    "Learn how to integrate a Theme Toggle component in JRui to allow users to switch between light and dark themes in your web application. Explore the features of this component, including seamless theme switching and intuitive user interface elements.",
+  openGraph: {
+    title: "Theme Toggle",
+    description:
+      "Learn how to integrate a Theme Toggle component in JRui to allow users to switch between light and dark themes in your web application. Explore the features of this component, including seamless theme switching and intuitive user interface elements.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const ThemeToggleComponent = () => {
   return (

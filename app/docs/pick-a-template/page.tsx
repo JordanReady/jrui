@@ -1,6 +1,20 @@
 import React from "react";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pick a Template",
+  description:
+    "Explore the variety of carefully crafted templates provided by JRui to kickstart your project. Each template offers unique features and design, along with step-by-step instructions to configure your project and provide a solid foundation for development.",
+  openGraph: {
+    title: "Pick a Template",
+    description:
+      "Explore the variety of carefully crafted templates provided by JRui to kickstart your project. Each template offers unique features and design, along with step-by-step instructions to configure your project and provide a solid foundation for development.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const PickTemplate = () => {
   return (

@@ -2,6 +2,21 @@ import React from "react";
 import DocLayout from "@/app/docs/DocLayout";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Docs Layout",
+  description:
+    "Welcome to the Next.js app layout, pre-equipped with NextAuth.js and Firebase for seamless authentication. Follow the outlined steps to set up your project. Learn how to clone the repository, set up Google Cloud and Firebase projects, configure environment files, customize your app, and deploy it to Vercel.",
+  openGraph: {
+    title:
+      "Docs Layout - Kickstart Your Next.js Journey with OAuth and Firebase",
+    description:
+      "Welcome to the Next.js app layout, pre-equipped with NextAuth.js and Firebase for seamless authentication. Follow the outlined steps to set up your project. Learn how to clone the repository, set up Google Cloud and Firebase projects, configure environment files, customize your app, and deploy it to Vercel.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const NextOauthFirebase = () => {
   return (

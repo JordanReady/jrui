@@ -6,6 +6,20 @@ import DemoTemplate from "@/components/DemoTemplate";
 import TooltipDemo from "@/components/demos/TooltipDemo";
 import TooltipDemo2 from "@/components/demos/TooltipDemo2";
 import CLI from "@/components/CLI";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tooltip",
+  description:
+    "Learn how to integrate a Tooltip component in JRui to provide informative tooltips when users hover over elements on a webpage. Explore the features of this component, including customizable properties such as width, offset, animation direction, and duration, enhancing user experience and interaction.",
+  openGraph: {
+    title: "Tooltip",
+    description:
+      "Learn how to integrate a Tooltip component in JRui to provide informative tooltips when users hover over elements on a webpage. Explore the features of this component, including customizable properties such as width, offset, animation direction, and duration, enhancing user experience and interaction.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const RevealComponent = () => {
   return (

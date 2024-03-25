@@ -6,6 +6,20 @@ import SectionTemplate from "@/components/SectionTemplate";
 import Desktop from "@/imgs/HeroDesktop.png";
 import Mobile from "@/imgs/HeroMobile.png";
 import CLI from "@/components/CLI";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hero Section",
+  description:
+    "Explore the Hero section, a customizable introductory component in JRui designed to catch the user's attention and set the tone for the application. Learn how to integrate this section, modify its content, and enhance user engagement with dynamic animations.",
+  openGraph: {
+    title: "Hero Section",
+    description:
+      "Explore the Hero section, a customizable introductory component in JRui designed to catch the user's attention and set the tone for the application. Learn how to integrate this section, modify its content, and enhance user engagement with dynamic animations.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const Hero = () => {
   return (

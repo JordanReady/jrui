@@ -2,6 +2,20 @@ import React from "react";
 import Link from "next/link";
 import DocLayout from "../DocLayout";
 import Reveal from "@/components/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Understanding Project Structure",
+  description:
+    "Discover how project structure works in JRui. Learn how to create routes, organize your application, and leverage Next.js's file-based routing system to efficiently manage and expand your projects.",
+  openGraph: {
+    title: "Understanding Project Structure",
+    description:
+      "Discover how project structure works in JRui. Learn how to create routes, organize your application, and leverage Next.js's file-based routing system to efficiently manage and expand your projects.",
+    siteName: "JRui",
+    type: "website",
+  },
+};
 
 const ProjectStructure = () => {
   return (
