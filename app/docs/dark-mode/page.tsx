@@ -78,7 +78,7 @@ const DarkModeSetup = () => {
               Component Files
             </h3>
             <CodeTemplate
-              fileName="components/ThemeProvider.tsx"
+              fileName="components > ThemeProvider.tsx"
               code={`"use client";
 
 import * as React from "react";
@@ -91,7 +91,7 @@ export default function ThemeProvider({ children, ...props }: ThemeProviderProps
             />
             <br />
             <CodeTemplate
-              fileName="components/ThemeToggle.tsx"
+              fileName="components > ThemeToggle.tsx"
               code={`"use client";
 
 import * as React from "react";
