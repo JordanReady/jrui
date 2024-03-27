@@ -1,4 +1,5 @@
 // Tooltip.tsx
+"use client";
 import React, { ReactNode, useState } from "react";
 import Reveal from "./Reveal";
 
