@@ -62,7 +62,7 @@ const Sitemap = () => {
         </Reveal>
         <Reveal>
           <section className="mb-8">
-            <CLI command="jrui create sitemap"></CLI>
+            <CLI command="jrui create sitemap robots"></CLI>
           </section>
         </Reveal>
         <Reveal>
