@@ -70,16 +70,22 @@ const DocNav: React.FC = () => {
         setPrevUrl("/docs/next-oauth-firebase");
         break;
       case "/docs/dark-mode":
-        setUrl("/docs/hero");
-        setTitle("Hero");
+        setUrl("/docs/sitemap");
+        setTitle("Sitemap");
         setPrevTitle("Docs Layout");
         setPrevUrl("/docs/next-oauth-firebase/docs");
+        break;
+      case "/docs/sitemap":
+        setUrl("/docs/hero");
+        setTitle("Hero");
+        setPrevTitle("Dark Mode");
+        setPrevUrl("/docs/dark-mode");
         break;
       case "/docs/hero":
         setUrl("/docs/form");
         setTitle("Form");
-        setPrevTitle("Dark Mode");
-        setPrevUrl("/docs/dark-mode");
+        setPrevTitle("Sitemap");
+        setPrevUrl("/docs/sitemap");
         break;
       case "/docs/form":
         setUrl("/docs/reveal");

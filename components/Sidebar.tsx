@@ -141,6 +141,9 @@ const Sidebar = () => {
             Dark Mode
           </Link>
         </NewBadge>
+        <Link className={getLinkClassName("sitemap")} href="/docs/sitemap">
+          Sitemap
+        </Link>
         <h1 className="text-primary font-semibold text-xl">Sections</h1>
         <NewBadge>
           <Link className={getLinkClassName("hero")} href="/docs/hero">

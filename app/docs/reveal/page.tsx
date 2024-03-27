@@ -38,7 +38,7 @@ const RevealComponent = () => {
               animation and the React Intersection Observer hook to detect when
               the component comes into view. It provides a smooth transition by
               gradually revealing or moving the child elements based on the
-              specified direction, duration and delay. That's tripple D's right
+              specified direction, duration and delay. That's triple D's right
               there! I use this component and variations similar, accross this
               entire site!
             </p>
