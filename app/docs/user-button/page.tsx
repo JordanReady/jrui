@@ -64,7 +64,14 @@ const RevealComponent = () => {
               <UserButtonDemo />
             </DemoTemplate>
             <Reveal className="mt-6">
-              <CLI command={"jrui add userButton"} />
+              <CLI
+                command={"jrui add userButton userAvatarNextOAuthFirebase"}
+              />
+              <p className="my-2 font-bold">
+                Note: This will override any custom styles you have in your
+                globals.css file. Make sure to have those ready to paste back in
+                after installing.
+              </p>
             </Reveal>
           </section>
         </Reveal>
@@ -173,6 +180,47 @@ return (
 
 export default UserButton;
               `}
+            />
+            <br />
+            <CodeTemplate
+              fileName="components > UserAvatar.tsx"
+              code={`"use client";
+import React from "react";
+import Image from "next/image";
+import { useSession } from "next-auth/react";
+
+interface UserAvatarProps {
+  size?: number;
+  className?: string;
+  alt?: string;
+}
+
+function UserAvatar({
+  size = 50,
+  className,
+  alt = "User profile image",
+}: UserAvatarProps) {
+  const { data: session } = useSession();
+  const imgUrl = session?.user?.image;
+
+  return (
+    <>
+      {imgUrl && (
+        <Image
+          alt={alt}
+          src={imgUrl}
+          width={size}
+          height={size}
+          className={\`\${className} shadow-sm border rounded-full\`}
+          loading="lazy"
+        />
+      )}
+    </>
+  );
+}
+
+export default UserAvatar;
+`}
             />
           </section>
         </Reveal>
