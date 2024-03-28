@@ -68,7 +68,7 @@ const RevealComponent = () => {
                 command={"jrui add userButton userAvatarNextOAuthFirebase"}
               />
               <p className="my-2 font-bold">
-                Note: This will override any custom styles you have in your
+                Note: This may override any custom styles you have in your
                 globals.css file. Make sure to have those ready to paste back in
                 after installing.
               </p>
