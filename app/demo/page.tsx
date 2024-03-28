@@ -9,11 +9,13 @@ import UserAvatar from "./components/UserAvatarNextOAuthFirebase";
 import ThemeToggle from "./components/ThemeToggle";
 import AuthForm from "./components/AuthForm";
 import Form from "./components/Form";
+import Contact from "./sections/Contact";
+import UserButton from "./components/UserButton";
 
 const Demo = () => {
   return (
     <div className="center h-[80dvh]">
-      <AuthForm />
+      <UserButton size={80} className="border-2 border-white" />
     </div>
   );
 };

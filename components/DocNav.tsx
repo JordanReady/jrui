@@ -112,10 +112,16 @@ const DocNav: React.FC = () => {
         setPrevUrl("/docs/theme-toggle");
         break;
       case "/docs/user-avatar":
-        setUrl("/docs");
-        setTitle("Getting Started");
+        setUrl("/docs/user-button");
+        setTitle("User Button");
         setPrevTitle("Tooltip");
         setPrevUrl("/docs/tooltip");
+        break;
+      case "/docs/user-button":
+        setUrl("/docs");
+        setTitle("Getting Started");
+        setPrevTitle("User Avatar");
+        setPrevUrl("/docs/user-avatar");
         break;
     }
   }, [urlInput]);

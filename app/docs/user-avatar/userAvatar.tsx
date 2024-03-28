@@ -64,6 +64,10 @@ const UserAvatar = () => {
         </Reveal>
         <Reveal>
           <section className="mb-8">
+            <Reveal className="text-lg mb-4 mt-[-1rem]">
+              Component Type:{" "}
+              <span className="text-primary font-bold">{avatarState}</span>
+            </Reveal>
             <h3 className=" text-primary text-2xl font-semibold mb-4">
               Overview
             </h3>

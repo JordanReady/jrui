@@ -175,6 +175,12 @@ const Sidebar = () => {
         >
           User Avatar
         </Link>
+        <Link
+          className={getLinkClassName("user-button")}
+          href="/docs/user-button"
+        >
+          User Button
+        </Link>
 
         <SidebarControls />
       </div>
