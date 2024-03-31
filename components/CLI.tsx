@@ -15,7 +15,7 @@ const CLI: React.FC<CLIProps> = ({ command, componentState }) => {
           Easy CLI Install
         </h2>
         <Tooltip
-          className="opacity-90 mt-[-1rem] transition-all duration-100"
+          className="opacity-90 mt-[-1rem] transition-all duration-100 z-10"
           animationDirection="down"
           animationDuration={0}
           width={25}

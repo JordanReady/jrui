@@ -29,7 +29,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 
   return (
     <div
-      className="relative z-[999] inline-block"
+      className="relative inline-block"
       onMouseEnter={() => setTimeout(() => setHovered(true), delayIn)}
       onMouseLeave={() => setTimeout(() => setHovered(false), delayOut)}
     >
@@ -37,7 +37,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       {isHovered && (
         <Reveal direction={animationDirection} duration={animationDuration}>
           <div
-            className={` ${className} mt-1 absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient z-[999] left-[50%]`}
+            className={` ${className} mt-1 absolute top-full transform -translate-x-1/2 bg-white dark:bg-[#020817] border border-gradient  left-[50%]`}
             style={{ width: width + "rem", left: `calc(50% + ${offset}rem)` }}
           >
             <p className="p-1 text-[14px] text-center m-0">{tip}</p>
