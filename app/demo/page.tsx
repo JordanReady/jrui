@@ -11,11 +11,20 @@ import AuthForm from "./components/AuthForm";
 import Form from "./components/Form";
 import Contact from "./sections/Contact";
 import UserButton from "./components/UserButton";
+import Typed from "./components/Typed";
 
 const Demo = () => {
   return (
     <div className="center h-[80dvh]">
-      <UserButton size={80} className="border-2 border-white" />
+      <Typed
+        strings={["JRui", "Rooty", "Scooty", "Tooty"]}
+        startDelay={500}
+        typeSpeed={10}
+        backSpeed={100}
+        backDelay={100}
+        loop={true}
+        className="text-2xl text-primary"
+      />
     </div>
   );
 };

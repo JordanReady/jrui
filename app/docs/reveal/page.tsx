@@ -176,9 +176,6 @@ const RevealComponent = () => {
             </DemoTemplate>
           </section>
         </Reveal>
-        <Reveal className="mb-6">
-          <CLI command={"jrui add reveal"} />
-        </Reveal>
         <Reveal>
           <section className="mb-8">
             <h3 className="text-primary text-2xl font-semibold mb-4">
