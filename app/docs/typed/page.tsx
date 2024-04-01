@@ -48,6 +48,11 @@ const RevealComponent = () => {
               a convenient way to add engaging typing animations to React
               projects with minimal configuration.
             </p>
+            <br />
+            <p>
+              Helpful Tip: You can style the cursor by targeting the
+              typed-cursor class with CSS
+            </p>
             <DemoTemplate
               title="Demo"
               code={`import React from "react";
