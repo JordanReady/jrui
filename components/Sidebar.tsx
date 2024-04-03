@@ -144,6 +144,9 @@ const Sidebar = () => {
         <Link className={getLinkClassName("sitemap")} href="/docs/sitemap">
           Sitemap
         </Link>
+        <Link className={getLinkClassName("404")} href="/docs/404">
+          404 Handling
+        </Link>
         <h1 className="text-primary font-semibold text-xl">Sections</h1>
         <NewBadge>
           <Link className={getLinkClassName("hero")} href="/docs/hero">
