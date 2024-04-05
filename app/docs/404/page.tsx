@@ -80,7 +80,17 @@ export default NotFoundPage;
               <NotFoundDemo />
             </DemoTemplate>
             <Reveal className="mt-6">
-              <CLI command={"jrui add not-found"} />
+              <CLI command={"jrui create not-found"} />
+            </Reveal>
+            <Reveal className="mt-6">
+              <p>
+                If you'd like to have the reveal component for the animations
+                you can run the following command as well. Otherwise, remove the
+                reveal import from the 'not-found.tsx' file.
+              </p>
+            </Reveal>
+            <Reveal className="mt-6">
+              <CLI command={"jrui add reveal"} />
             </Reveal>
           </section>
         </Reveal>
