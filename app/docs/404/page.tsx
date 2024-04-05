@@ -106,7 +106,7 @@ export default NotFoundPage;
 import React from "react";
 import Image from "next/image";
 import Error from "@/imgs/404.png";
-import Reveal from "@/app/demo/components/Reveal";
+import Reveal from "@/components/Reveal";
 
 const NotFoundPage = () => {
 return (
